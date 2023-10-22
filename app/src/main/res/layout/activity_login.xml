@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="244dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/correo_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/contrasenia_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+    <Button
+        android:id="@+id/btn_ingresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="INGRESAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
+    <LinearLayout
+        android:id="@+id/opciones_de_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ingresar">
+
+        <LinearLayout
+            android:id="@+id/opciones_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/iniciar_sesion_con_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/iniciar_sesion_con_title"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/opciones_content"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_facebook"
+                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_height="@dimen/loginwithapplogo_WH"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/btn_star"
+                tools:src="@drawable/facebook"
+                android:contentDescription="@string/fb_description"/>
+
+
+            <ImageButton
+                android:id="@+id/btn_instagram"
+                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_height="@dimen/loginwithapplogo_WH"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/btn_star"
+                tools:src="@drawable/instagram"
+                android:contentDescription="@string/ig_description"/>
+
+            <ImageButton
+                android:id="@+id/btn_google"
+                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_height="@dimen/loginwithapplogo_WH"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/btn_star"
+                tools:src="@drawable/google"
+                android:contentDescription="@string/google_description"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/opciones_footer"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/register_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="@string/register_label" />
+
+            <TextView
+                android:id="@+id/register_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/register_text" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
