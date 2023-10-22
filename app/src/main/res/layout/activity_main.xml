@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/id_menuHamb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,14 +28,14 @@
             app:srcCompat="@drawable/menu_hambur" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/id_logo"
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/logo" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/id_perfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,7 +45,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/id_promo"
         android:layout_width="409dp"
         android:layout_height="200dp"
         android:layout_marginStart="2dp"
@@ -64,9 +64,10 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6">
+        app:layout_constraintTop_toBottomOf="@+id/id_promo">
 
         <SearchView
+            android:id="@+id/id_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FAFAFA"
@@ -92,7 +93,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/id_tickets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -100,7 +101,7 @@
                     app:srcCompat="@drawable/pelicula_foto_prueba" />
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/id_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -124,7 +125,7 @@
 
         <ImageView
             android:id="@+id/imageView15"
-            android:layout_width="wrap_content"
+            android:layout_width="36dp"
             android:layout_height="69dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/tickets" />
@@ -137,7 +138,7 @@
             app:srcCompat="@drawable/home" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/id_soporte"
             android:layout_width="wrap_content"
             android:layout_height="71dp"
             android:layout_weight="1"
