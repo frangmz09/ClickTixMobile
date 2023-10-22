@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="loginwithapplogo_WH">50dp</dimen>
-<<<<<<< HEAD
+
     <dimen name="fab_margin">16dp</dimen>
-=======
->>>>>>> origin/master
+
+
 </resources>
