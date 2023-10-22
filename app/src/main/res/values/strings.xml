@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ClickTixMobile</string>
+    <string name="contrasenia_input">Contraseña</string>
+    <string name="correo_input">Correo</string>
+    <string name="iniciar_sesion_con_title">Iniciar sesion con</string>
+    <string name="register_label">No tienes cuenta?</string>
+    <string name="register_text">Registrate aquí</string>
+    <string name="fb_description">Botón de inicio con Facebook</string>
+    <string name="ig_description">Botón de inicio con Instagram</string>
+    <string name="google_description">Botón de inicio con Google</string>
 </resources>
