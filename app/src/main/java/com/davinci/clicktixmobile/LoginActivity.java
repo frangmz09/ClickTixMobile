@@ -38,13 +38,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View button) {
                 if (email.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    mensajeDeError.setText("Debe completar los campos de ingreso");
+                    mensajeDeError.setText(R.string.msg_error_login1);
                     mensajeDeError.setVisibility(View.VISIBLE);
                 } else if (email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()) {
-                    mensajeDeError.setText("El campo correo está vacío, por favor ingrese su email");
+                    mensajeDeError.setText(R.string.msg_error_login2);
                     mensajeDeError.setVisibility(View.VISIBLE);
                 } else if (password.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
-                    mensajeDeError.setText("El campo contraseña está vacío, por favor ingrese su contraseña");
+                    mensajeDeError.setText(R.string.msg_error_login3);
                     mensajeDeError.setVisibility(View.VISIBLE);
                 } else {
                     mensajeDeError.setVisibility(View.GONE);

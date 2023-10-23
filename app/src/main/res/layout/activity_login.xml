@@ -123,7 +123,7 @@
                 android:contentDescription="@string/fb_description"
                 android:scaleType="fitCenter"
 
-                android:src="@android:drawable/btn_star"
+                android:src="@drawable/facebook"
                 tools:src="@drawable/facebook" />
 
 
@@ -137,7 +137,7 @@
                 android:contentDescription="@string/ig_description"
 
                 android:scaleType="fitCenter"
-                android:src="@android:drawable/btn_star"
+                android:src="@drawable/instagram"
                 tools:src="@drawable/instagram" />
 
             <ImageButton
@@ -149,7 +149,7 @@
                 android:background="#fff"
                 android:contentDescription="@string/google_description"
                 android:scaleType="fitCenter"
-                android:src="@android:drawable/btn_star"
+                android:src="@drawable/google"
                 tools:src="@drawable/google" />
 
         </LinearLayout>
