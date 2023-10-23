@@ -119,7 +119,7 @@
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:background=""
+                android:background="#fff"
                 android:contentDescription="@string/fb_description"
                 android:scaleType="fitCenter"
 
@@ -133,7 +133,7 @@
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:background=""
+                android:background="#fff"
                 android:contentDescription="@string/ig_description"
 
                 android:scaleType="fitCenter"
@@ -146,7 +146,7 @@
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:background=""
+                android:background="#fff"
                 android:contentDescription="@string/google_description"
                 android:scaleType="fitCenter"
                 android:src="@android:drawable/btn_star"
