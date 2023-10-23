@@ -27,7 +27,9 @@
         android:hint="@string/correo_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:backgroundTint="@color/complementary_color"
+        />
 
     <EditText
         android:id="@+id/input_password"
@@ -42,7 +44,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+        app:layout_constraintTop_toBottomOf="@+id/input_email"
+        android:backgroundTint="@color/complementary_color"
+
+        />
 
     <Button
         android:id="@+id/btn_ingresar"
@@ -54,6 +59,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
+    <LinearLayout
+        android:id="@+id/error1_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/opciones_de_inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ingresar">
+
+        <TextView
+            android:id="@+id/mensaje_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/primary_color" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/opciones_de_inicio"
@@ -90,37 +115,42 @@
 
             <ImageButton
                 android:id="@+id/btn_facebook"
-                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
+                android:background=""
+                android:contentDescription="@string/fb_description"
                 android:scaleType="fitCenter"
+
                 android:src="@android:drawable/btn_star"
-                tools:src="@drawable/facebook"
-                android:contentDescription="@string/fb_description"/>
+                tools:src="@drawable/facebook" />
 
 
             <ImageButton
                 android:id="@+id/btn_instagram"
-                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
+                android:background=""
+                android:contentDescription="@string/ig_description"
+
                 android:scaleType="fitCenter"
                 android:src="@android:drawable/btn_star"
-                tools:src="@drawable/instagram"
-                android:contentDescription="@string/ig_description"/>
+                tools:src="@drawable/instagram" />
 
             <ImageButton
                 android:id="@+id/btn_google"
-                android:layout_width="@dimen/loginwithapplogo_WH"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/loginwithapplogo_WH"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
+                android:background=""
+                android:contentDescription="@string/google_description"
                 android:scaleType="fitCenter"
                 android:src="@android:drawable/btn_star"
-                tools:src="@drawable/google"
-                android:contentDescription="@string/google_description"/>
+                tools:src="@drawable/google" />
 
         </LinearLayout>
 
@@ -128,7 +158,7 @@
             android:id="@+id/opciones_footer"
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <TextView
