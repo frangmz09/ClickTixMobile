@@ -15,6 +15,9 @@
         <activity
             android:name=".Pelicula_detail"
             android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
 
         <activity
             android:name=".MainActivity"
