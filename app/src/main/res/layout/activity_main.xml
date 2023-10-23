@@ -15,6 +15,7 @@
         android:background="#FAFAFA"
         android:orientation="horizontal"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_promo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -119,7 +120,8 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="419dp"
-        android:layout_height="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
         android:background="#FAFAFA"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
