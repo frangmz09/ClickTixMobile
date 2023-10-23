@@ -25,5 +25,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView loginImage = findViewById(R.id.id_perfil);
+
+        loginImage.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                // Crear un Intent para volver a ActivityA
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
