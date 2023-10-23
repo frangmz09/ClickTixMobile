@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View view) {
                 // Crear un Intent para volver a ActivityA
-                Intent intent = new Intent(MainActivity.this, Pelicula_detail.class);
+                Intent intent = new Intent(MainActivity.this, PeliculaDetalleActivity.class);
                 startActivity(intent);
             }
         });
