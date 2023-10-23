@@ -13,13 +13,9 @@
         android:theme="@style/Theme.ClickTixMobile"
         tools:targetApi="31" >
         <activity
-            android:name=".pelicula_detail"
-            android:exported="false" />
-        <activity
-            android:name=".pelicula_detalle"
-            android:exported="false"
-            android:label="@string/title_activity_pelicula_detalle"
-            android:theme="@style/Theme.ClickTixMobile" />
+            android:name=".Pelicula_detail"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" >
