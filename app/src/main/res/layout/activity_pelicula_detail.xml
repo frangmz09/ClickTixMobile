@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/containerPortada"
         android:layout_width="407dp"
-        android:layout_height="302dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/containerDescripcionPelicula"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,24 +31,26 @@
         <ImageView
             android:id="@+id/imgPortadaPelicula"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             app:srcCompat="@drawable/pelicula_foto_prueba" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/containerDescripcionPelicula"
-        android:layout_width="413dp"
-        android:layout_height="342dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:background="#FAFAFA"
         android:orientation="vertical"
         android:paddingStart="20dp"
         android:paddingTop="30dp"
         android:paddingEnd="20dp"
-        android:paddingBottom="30dp"
+        android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerPortada"
         tools:circularflow_radiusInDP="20dp">
@@ -97,7 +99,7 @@
             android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="30dp"
+            android:paddingBottom="20dp"
             android:text="Fecha de estreno: 30/10/2023"
             android:textStyle="bold" />
 
@@ -112,8 +114,8 @@
 
     <LinearLayout
         android:id="@+id/containerNavbar"
-        android:layout_width="416dp"
-        android:layout_height="83dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
         android:background="#FAFAFA"
         android:elevation="8dp"
@@ -135,7 +137,7 @@
         <ImageView
             android:id="@+id/imgLogoNav"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginEnd="45dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/logo"
