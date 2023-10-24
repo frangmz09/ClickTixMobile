@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="SONIDOS DE LIBERTAD"
+            android:text="@string/tituloPelicula"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -76,14 +76,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="5dp"
-            android:text="Nombre: SONIDOS DE LIBERTAD"
+            android:text="@string/nombrePelicula"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Genero: DRAMA"
+            android:text="@string/genero"
             android:textStyle="bold"
             tools:paddingBottom="5dp" />
 
