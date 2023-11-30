@@ -14,13 +14,13 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        ImageButton backButton = findViewById(R.id.btnVolverFuncionInfo);
+        ImageButton backButton = findViewById(R.id.btn_volverAfunciones);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(PaymentActivity.this, MainActivity.class);
+                Intent intent = new Intent(PaymentActivity.this, FuncionesActivity.class);
                 startActivity(intent);
             }
         });

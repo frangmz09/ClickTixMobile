@@ -13,11 +13,11 @@
         android:theme="@style/Theme.ClickTixMobile"
         tools:targetApi="31">
         <activity
-            android:name=".TicketsActivity"
-            android:exported="false" />
-        <activity
             android:name=".PaymentActivity"
             android:exported="true" />
+        <activity
+            android:name=".TicketsActivity"
+            android:exported="false" />
         <activity
             android:name=".PeliculaDetalleActivity"
             android:exported="true" />
