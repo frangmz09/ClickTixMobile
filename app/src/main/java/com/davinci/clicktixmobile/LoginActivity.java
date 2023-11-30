@@ -10,12 +10,18 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+
+public class LoginActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuth = FirebaseAuth.getInstance();
 
         EditText email = findViewById(R.id.input_email_register);
         EditText password = findViewById(R.id.input_password);

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "2739299338",
+    "project_id": "clicktixmobile",
+    "storage_bucket": "clicktixmobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2739299338:android:391b59af6d9d4737ea6bf3",
+        "android_client_info": {
+          "package_name": "com.davinci.clicktixmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2739299338-m3qopaif2k6ogmrgbndho01duvs186r8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0cA9ZY4gH9mzoBl4noeYNJbb_H2SeXQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2739299338-m3qopaif2k6ogmrgbndho01duvs186r8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
