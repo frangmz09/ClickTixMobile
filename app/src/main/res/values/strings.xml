@@ -13,6 +13,7 @@
     <string name="msg_error_login1">Debe completar los campos de ingreso</string>
     <string name="msg_error_login2">El campo correo está vacío, por favor ingrese su email</string>
     <string name="msg_error_login3">El campo contraseña está vacío, por favor ingrese su contraseña</string>
+    <string name="msg_error_password_mismatch">Las contraseñas no coinciden</string>
     <string name="sinopsisContenido">La historia de Tim Ballard, un exagente del gobierno de Estados Unidos, que renuncia a su trabajo para dedicar su vida a salvar a los niños de los traficantes sexuales mundiales.</string>
     <string name="genero">Genero: DRAMA</string>
     <string name="nombrePelicula">Nombre: SONIDOS DE LIBERTAD</string>
@@ -27,6 +28,7 @@
     <string name="codigo_seguridad">Codigo Seguridad</string>
     <string name="fecha_de_vencimiento">Fecha de Vencimiento</string>
     <string name="boton_para_back">boton para back</string>
+    <string name="passconfirm_register">Confirmar Contraseña</string>
 
 
 </resources>
