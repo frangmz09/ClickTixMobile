@@ -60,59 +60,42 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View button) {
 
+                if (email.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login1);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else if (email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login2);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else if (password.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login3);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else {
+                    mAuth.signInWithEmailAndPassword(String.valueOf(email.getText()), String.valueOf(password.getText()))
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d("TAG", "signInWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
 
-                mAuth.signInWithEmailAndPassword(String.valueOf(email.getText()), String.valueOf(password.getText()))
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d("TAG", "signInWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(intent);
+                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(intent);
 
 
 //                                    updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w("TAG", "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w("TAG", "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
 
 
 //                                    updateUI(null);
+                                    }
                                 }
-                            }
-                        });
-
-
-
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//                if (email.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login1);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else if (email.getText().toString().isEmpty() && !password.getText().toString().isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login2);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else if (password.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login3);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else {
-//                    mensajeDeError.setVisibility(View.GONE);
-//                }
+                            });
+                }
             }
         });
     }

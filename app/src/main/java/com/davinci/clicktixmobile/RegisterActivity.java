@@ -53,49 +53,49 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordText = password.getText().toString();
                 String confirmPasswordText = confirmpassword.getText().toString();
 
-                mAuth.createUserWithEmailAndPassword(emailText, passwordText)
-                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-
-                                    Log.d("TAG", "createUserWithEmail:success");
-
-                                    Toast.makeText(RegisterActivity.this, "Se registro" ,
-                                            Toast.LENGTH_SHORT).show();
 
 
-                                } else {
 
-                                    Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
 
+
+
+
+                if (emailText.isEmpty() || passwordText.isEmpty() || confirmPasswordText.isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login1);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else if (emailText.isEmpty() && !passwordText.isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login2);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else if (passwordText.isEmpty() && !emailText.isEmpty()) {
+                    mensajeDeError.setText(R.string.msg_error_login3);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else if (!passwordText.equals(confirmPasswordText)) {
+                    mensajeDeError.setText(R.string.msg_error_password_mismatch);
+                    mensajeDeError.setVisibility(View.VISIBLE);
+                } else {
+
+                    mAuth.createUserWithEmailAndPassword(emailText, passwordText)
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+
+                                        Log.d("TAG", "createUserWithEmail:success");
+
+                                        Toast.makeText(RegisterActivity.this, "Se registro" ,
+                                                Toast.LENGTH_SHORT).show();
+
+
+                                    } else {
+
+                                        Log.w("TAG", "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+
+                                    }
                                 }
-                            }
-                        });
-
-
-
-
-
-
-
-//                if (emailText.isEmpty() || passwordText.isEmpty() || confirmPasswordText.isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login1);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else if (emailText.isEmpty() && !passwordText.isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login2);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else if (passwordText.isEmpty() && !emailText.isEmpty()) {
-//                    mensajeDeError.setText(R.string.msg_error_login3);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else if (!passwordText.equals(confirmPasswordText)) {
-//                    mensajeDeError.setText(R.string.msg_error_password_mismatch);
-//                    mensajeDeError.setVisibility(View.VISIBLE);
-//                } else {
-//                    mensajeDeError.setVisibility(View.GONE);
-//                }
+                            });
+                }
             }
         });
     }
