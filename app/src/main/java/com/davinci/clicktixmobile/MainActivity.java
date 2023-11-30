@@ -24,7 +24,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ImageView TicketsLink = findViewById(R.id.id_tickets);
+        TicketsLink.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View view) {
+                // Crear un Intent para volver a ActivityA
+                Intent intent = new Intent(MainActivity.this, TicketsActivity.class);
+                startActivity(intent);
+            }
+        });
         ImageView loginImage = findViewById(R.id.id_perfil);
 
         loginImage.setOnClickListener(new View.OnClickListener() {
