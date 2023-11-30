@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#B22F2F"
+                android:backgroundTint="#B61C1C"
                 android:text="26/12" />
         </LinearLayout>
 
@@ -173,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#B13535"
+                android:backgroundTint="#B61C1C"
                 android:text="Español" />
 
             <Button
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#B42929"
+                android:backgroundTint="#B61C1C"
                 android:text="Ingles" />
         </LinearLayout>
     </LinearLayout>
@@ -215,7 +215,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#B32929"
+                android:backgroundTint="#B61C1C"
                 android:text="12:00hs" />
 
             <Button
@@ -223,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#B22929"
+                android:backgroundTint="#B61C1C"
                 android:text="16:00hs" />
         </LinearLayout>
     </LinearLayout>
