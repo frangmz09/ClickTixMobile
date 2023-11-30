@@ -17,7 +17,16 @@
     <string name="genero">Genero: DRAMA</string>
     <string name="nombrePelicula">Nombre: SONIDOS DE LIBERTAD</string>
     <string name="tituloPelicula">SONIDOS DE LIBERTAD</string>
-    <string name="input_confirmpassword_register">Confirmar Contraseña</string>
-    <string name="msg_error_password_mismatch">Las contraseñas no coinciden</string>
+    <string name="numero_tarjera">Numero Tarjera</string>
+    <string name="ver_funciones">Ver Funciones</string>
+    <string name="fecha_de_estreno">Fecha de estreno:</string>
+    <string name="clasificacion">Clasificacion:</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="numero_tarjeta">Numero Tarjeta</string>
+    <string name="nombre_titular">Nombre Titular</string>
+    <string name="codigo_seguridad">Codigo Seguridad</string>
+    <string name="fecha_de_vencimiento">Fecha de Vencimiento</string>
+    <string name="boton_para_back">boton para back</string>
+
 
 </resources>
