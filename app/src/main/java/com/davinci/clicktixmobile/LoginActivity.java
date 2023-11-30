@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.input_email_register);
         EditText password = findViewById(R.id.input_password);
         TextView mensajeDeError = findViewById(R.id.mensaje_error_register);
+        TextView registrarse = findViewById(R.id.register_text);
 
         ImageButton backButton = findViewById(R.id.btn_volver);
 
@@ -28,6 +29,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        registrarse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
