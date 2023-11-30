@@ -29,6 +29,7 @@
     <string name="fecha_de_vencimiento">Fecha de Vencimiento</string>
     <string name="boton_para_back">boton para back</string>
     <string name="passconfirm_register">Confirmar Contraseña</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
 
 
 </resources>

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View view) {
                 // Crear un Intent para volver a ActivityA
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
