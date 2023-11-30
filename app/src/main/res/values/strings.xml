@@ -17,6 +17,7 @@
     <string name="genero">Genero: DRAMA</string>
     <string name="nombrePelicula">Nombre: SONIDOS DE LIBERTAD</string>
     <string name="tituloPelicula">SONIDOS DE LIBERTAD</string>
-
+    <string name="input_confirmpassword_register">Confirmar Contraseña</string>
+    <string name="msg_error_password_mismatch">Las contraseñas no coinciden</string>
 
 </resources>
