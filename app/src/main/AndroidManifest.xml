@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ClickTixMobile"
         tools:targetApi="31" >
         <activity
-            android:name=".Pelicula_detail"
+            android:name=".PeliculaDetalleActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"

@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Pelicula_detail extends AppCompatActivity {
+public class PeliculaDetalleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,7 @@ public class Pelicula_detail extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Pelicula_detail.this, MainActivity.class);
+                Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
