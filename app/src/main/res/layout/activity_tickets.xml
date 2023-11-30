@@ -13,15 +13,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="363dp"
-        android:layout_marginBottom="181dp"
         android:layout_weight="1"
         android:background="#fff"
-        app:layout_constraintBottom_toTopOf="@+id/input_email_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/flecha_izquierda" />
 
     <LinearLayout
@@ -31,14 +28,13 @@
         android:background="#FAFAFA"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/id_menuHamb"
+            android:id="@+id/id_menuHamb_tickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,14 +42,14 @@
             app:srcCompat="@drawable/menu_hambur" />
 
         <ImageView
-            android:id="@+id/id_logo"
+            android:id="@+id/id_logo_tickets"
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/logo" />
 
         <ImageView
-            android:id="@+id/id_perfil"
+            android:id="@+id/id_perfil_tickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -105,8 +101,8 @@
                     <ImageView
                         android:id="@+id/ticket_image"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@tools:sample/avatars" />
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/pelicula_foto_prueba" />
                 </LinearLayout>
 
                 <LinearLayout

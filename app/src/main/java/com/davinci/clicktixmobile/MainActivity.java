@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageView loginImage = findViewById(R.id.id_perfil);
+        ImageView loginImage = findViewById(R.id.id_perfil_tickets);
 
         loginImage.setOnClickListener(new View.OnClickListener() {
 
