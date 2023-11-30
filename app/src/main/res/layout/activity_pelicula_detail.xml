@@ -59,7 +59,7 @@
             android:id="@+id/txtSinopsisTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sinopsis"
+            android:text="@string/sinopsis"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:text="Clasificacion: 13 C/R"
+            android:text="@string/clasificacion"
             android:textStyle="bold" />
 
         <TextView
@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:text="Fecha de estreno: 30/10/2023"
+            android:text="@string/fecha_de_estreno"
             android:textStyle="bold" />
 
         <Button
@@ -108,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/primary_color"
-            android:text="Ver Funciones" />
+            android:text="@string/ver_funciones" />
 
     </LinearLayout>
 
@@ -127,12 +127,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/btnVolverCartelera"
+            android:id="@+id/btnVolverFuncionInfo"
             android:layout_width="112dp"
             android:layout_height="61dp"
             android:layout_weight="1"
             android:background="#FAFAFA"
-            app:srcCompat="@drawable/flecha_izquierda" />
+            app:srcCompat="@drawable/flecha_izquierda"
+            android:contentDescription="TODO" />
 
         <ImageView
             android:id="@+id/imgLogoNav"

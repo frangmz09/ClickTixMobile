@@ -33,6 +33,14 @@ android {
 
 dependencies {
 
+    //COMIENZO de dependencias DE FireBase
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    //IMPLEMENTACION AUTHENTICATION
+    implementation("com.google.firebase:firebase-auth")
+    //FIN de dependencias DE FireBase
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
