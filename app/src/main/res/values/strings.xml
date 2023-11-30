@@ -11,6 +11,7 @@
     <string name="msg_error_login1">Debe completar los campos de ingreso</string>
     <string name="msg_error_login2">El campo correo está vacío, por favor ingrese su email</string>
     <string name="msg_error_login3">El campo contraseña está vacío, por favor ingrese su contraseña</string>
+    <string name="input_confirmpassword_register">Confirmar Contraseña</string>
 
 
 </resources>

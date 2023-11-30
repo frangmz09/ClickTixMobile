@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText email = findViewById(R.id.input_email);
+        EditText email = findViewById(R.id.input_email_register);
         EditText password = findViewById(R.id.input_password);
         TextView mensajeDeError = findViewById(R.id.mensaje_error);
 
