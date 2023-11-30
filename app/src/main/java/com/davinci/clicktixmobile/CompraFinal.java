@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class PeliculaDetalleActivity extends AppCompatActivity {
+public class CompraFinal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pelicula_detail);
+        setContentView(R.layout.activity_compra_final);
 
         ImageButton backButton = findViewById(R.id.btn_volverAfunciones);
 
@@ -21,24 +20,9 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
+                Intent intent = new Intent(CompraFinal.this, PaymentActivity.class);
                 startActivity(intent);
             }
         });
-
-        Button btn = findViewById(R.id.btnVerFunciones);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
     }
 }

@@ -29,7 +29,13 @@
     <string name="fecha_de_vencimiento">Fecha de Vencimiento</string>
     <string name="boton_para_back">boton para back</string>
     <string name="passconfirm_register">Confirmar Contraseña</string>
-    <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="tickets_title">Tus tickets</string>
+    <string name="tickets_title_header">Tus Tickets</string>
+    <string name="ticket_title_text">Titulo</string>
+    <string name="ticket_date_text">Fecha</string>
+    <string name="ticket_time_text">Horario</string>
+    <string name="ticket_language_text">Idioma</string>
+    <string name="ticket_seats_const">Numero Entradas:</string>
 
 
 </resources>

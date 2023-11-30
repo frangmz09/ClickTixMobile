@@ -7,24 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class PaymentActivity extends AppCompatActivity {
+public class TicketsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_tickets);
 
-        ImageButton backButton = findViewById(R.id.btn_volverAfunciones);
+        ImageButton backButton = findViewById(R.id.btn_volver_tickets);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(PaymentActivity.this, FuncionesActivity.class);
+                Intent intent = new Intent(TicketsActivity.this, MainActivity.class);
                 startActivity(intent);
             }
-        });
 
+
+        });
 
 
     }

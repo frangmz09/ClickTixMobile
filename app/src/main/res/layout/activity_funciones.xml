@@ -8,7 +8,7 @@
     android:background="#D8D8D8">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/navbar"
         android:layout_width="411dp"
         android:layout_height="103dp"
         android:background="#FAFAFA"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/id_menuHamb"
+            android:id="@+id/id_menuHamb_tickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -29,14 +29,14 @@
             app:srcCompat="@drawable/menu_hambur" />
 
         <ImageView
-            android:id="@+id/id_logo"
+            android:id="@+id/id_logo_tickets"
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/logo" />
 
         <ImageView
-            android:id="@+id/id_perfil"
+            android:id="@+id/id_perfil_tickets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/navbar">
 
         <TextView
             android:id="@+id/txt_dimension"
