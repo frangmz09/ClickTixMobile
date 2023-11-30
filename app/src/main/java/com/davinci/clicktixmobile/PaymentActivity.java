@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class PeliculaDetalleActivity extends AppCompatActivity {
+public class PaymentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pelicula_detail);
+        setContentView(R.layout.activity_payment);
 
         ImageButton backButton = findViewById(R.id.btnVolverFuncionInfo);
 
@@ -20,7 +20,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
+                Intent intent = new Intent(PaymentActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
