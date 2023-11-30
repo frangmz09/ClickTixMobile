@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText email = findViewById(R.id.input_email_register);
         EditText password = findViewById(R.id.input_password);
-        TextView mensajeDeError = findViewById(R.id.mensaje_error);
+        TextView mensajeDeError = findViewById(R.id.mensaje_error_register);
 
         ImageButton backButton = findViewById(R.id.btn_volver);
 
