@@ -21,7 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        ImageButton backButton = findViewById(R.id.btnVolverFuncionInfo);
+        ImageButton backButton = findViewById(R.id.btnVolverPelicula);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -22,7 +22,7 @@
         tools:ignore="UnknownIdInLayout">
 
         <ImageButton
-            android:id="@+id/btnVolverFuncionInfo"
+            android:id="@+id/btnVolverPelicula"
             android:layout_width="112dp"
             android:layout_height="61dp"
             android:layout_weight="1"
