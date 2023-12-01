@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class CompraFinal extends AppCompatActivity {
+public class CompraFinalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class CompraFinal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(CompraFinal.this, PaymentActivity.class);
+                Intent intent = new Intent(CompraFinalActivity.this, PaymentActivity.class);
                 startActivity(intent);
             }
         });

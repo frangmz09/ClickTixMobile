@@ -36,6 +36,7 @@
     <string name="ticket_time_text">Horario</string>
     <string name="ticket_language_text">Idioma</string>
     <string name="ticket_seats_const">Numero Entradas:</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
 
 
 </resources>
