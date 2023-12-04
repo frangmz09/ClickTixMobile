@@ -85,6 +85,10 @@ public class RegisterActivity extends AppCompatActivity {
                                         Toast.makeText(RegisterActivity.this, "Se registro" ,
                                                 Toast.LENGTH_SHORT).show();
 
+                                        Intent intent = new Intent(RegisterActivity.this, VerificationActivity.class);
+                                        intent.putExtra("email", emailText);
+                                        startActivity(intent);
+
 
                                     } else {
 
