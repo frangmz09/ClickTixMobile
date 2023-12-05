@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             Type listType = new TypeToken<List<Pelicula>>() {}.getType();
                             List<Pelicula> peliculas = new Gson().fromJson(resultsArray, listType);
 
-                            LinearLayout movieContainerLayout = findViewById(R.id.content_scroll);
+                            LinearLayout movieContainerLayout = findViewById(R.id.scrollcontent);
 
                             for (Pelicula pelicula : peliculas) {
                                 LinearLayout movieLayout = new LinearLayout(MainActivity.this);
@@ -70,12 +71,14 @@ public class MainActivity extends AppCompatActivity {
                                 posterImageView.setLayoutParams(new LinearLayout.LayoutParams(
                                         LinearLayout.LayoutParams.MATCH_PARENT,
                                         LinearLayout.LayoutParams.WRAP_CONTENT));
-                                // Ajusta la escala de la imagen para que no deforme las demás vistas
                                 posterImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-                                // Utiliza Picasso para cargar la imagen desde la URL
-                                Picasso.get().load(pelicula.getPosterUrl()).into(posterImageView);
+                                Picasso.get()
+                                        .load(pelicula.getPosterUrl())
+                                        .error(R.drawable.pelicula_foto_prueba) // Aquí puedes especificar un recurso de imagen para mostrar en caso de error.
+                                        .into(posterImageView);
 
+                                Log.e("PRUEBA",(pelicula.getPosterUrl()));
                                 TextView titleTextView = new TextView(MainActivity.this);
                                 titleTextView.setLayoutParams(new LinearLayout.LayoutParams(
                                         LinearLayout.LayoutParams.MATCH_PARENT,

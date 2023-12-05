@@ -89,7 +89,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
@@ -102,10 +102,10 @@
             android:layout_height="274dp">
 
             <LinearLayout
-                android:id="@+id/content_scroll"
-                android:layout_width="wrap_content"
+                android:id="@+id/scrollcontent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" />
+                android:orientation="vertical"></LinearLayout>
         </ScrollView>
 
     </LinearLayout>
