@@ -53,13 +53,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordText = password.getText().toString();
                 String confirmPasswordText = confirmpassword.getText().toString();
 
-
-
-
-
-
-
-
                 if (emailText.isEmpty() || passwordText.isEmpty() || confirmPasswordText.isEmpty()) {
                     mensajeDeError.setText(R.string.msg_error_login1);
                     mensajeDeError.setVisibility(View.VISIBLE);

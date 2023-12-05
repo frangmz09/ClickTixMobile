@@ -19,7 +19,7 @@ public class FuncionesActivity extends AppCompatActivity {
         back_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FuncionesActivity.this, LoginActivity.class);
+                Intent intent = new Intent(FuncionesActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

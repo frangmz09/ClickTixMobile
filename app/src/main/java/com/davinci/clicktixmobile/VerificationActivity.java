@@ -32,7 +32,7 @@ public class VerificationActivity extends AppCompatActivity {
         back_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerificationActivity.this, LoginActivity.class);
+                Intent intent = new Intent(VerificationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

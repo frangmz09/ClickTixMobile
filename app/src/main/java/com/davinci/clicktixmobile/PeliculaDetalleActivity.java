@@ -37,7 +37,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         back_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PeliculaDetalleActivity.this, LoginActivity.class);
+                Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
