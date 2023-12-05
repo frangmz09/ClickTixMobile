@@ -1,7 +1,10 @@
 package com.davinci.clicktixmobile;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -75,16 +78,21 @@ public class MainActivity extends AppCompatActivity {
 
                                 Picasso.get()
                                         .load(pelicula.getPosterUrl())
-                                        .error(R.drawable.pelicula_foto_prueba) // Aquí puedes especificar un recurso de imagen para mostrar en caso de error.
+                                        .error(R.drawable.error_image)
                                         .into(posterImageView);
 
                                 Log.e("PRUEBA",(pelicula.getPosterUrl()));
                                 TextView titleTextView = new TextView(MainActivity.this);
-                                titleTextView.setLayoutParams(new LinearLayout.LayoutParams(
-                                        LinearLayout.LayoutParams.MATCH_PARENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                                titleTextView.setText(pelicula.getTitle());
 
+                                LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                                titleParams.setMargins(0, 15, 0, 50);
+                                titleTextView.setLayoutParams(titleParams);
+                                titleTextView.setText(pelicula.getTitle());
+                                titleTextView.setGravity(Gravity.CENTER);
+                                 titleTextView.setTextColor(Color.BLACK);
+                                 titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                                 movieLayout.addView(posterImageView);
                                 movieLayout.addView(titleTextView);
 
