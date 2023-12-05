@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String API_KEY = "44f9ad3c77d25563ced721e526744397";
     private static final String LANGUAGE = "es-ES";
     private static final String REGION = "AR";
+
+
+    private List<Pelicula> tuListaDePeliculasEnCartelera = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Aquí puedes manejar la búsqueda mientras el usuario escribe
+
                 return false;
             }
         });
 
+
         loadMovies();
     }
+
 
     private void loadMovies() {
         OkHttpClient client = new OkHttpClient();
@@ -83,42 +89,10 @@ public class MainActivity extends AppCompatActivity {
                             JsonObject jsonObject = JsonParser.parseString(responseData).getAsJsonObject();
                             JsonArray resultsArray = jsonObject.getAsJsonArray("results");
                             Type listType = new TypeToken<List<Pelicula>>() {}.getType();
-                            List<Pelicula> peliculas = new Gson().fromJson(resultsArray, listType);
+                            tuListaDePeliculasEnCartelera = new Gson().fromJson(resultsArray, listType);
 
-                            LinearLayout movieContainerLayout = findViewById(R.id.scrollcontent);
-
-                            for (Pelicula pelicula : peliculas) {
-                                LinearLayout movieLayout = new LinearLayout(MainActivity.this);
-                                movieLayout.setOrientation(LinearLayout.VERTICAL);
-
-                                ImageView posterImageView = new ImageView(MainActivity.this);
-                                posterImageView.setLayoutParams(new LinearLayout.LayoutParams(
-                                        LinearLayout.LayoutParams.MATCH_PARENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                                posterImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
-                                Picasso.get()
-                                        .load(pelicula.getPosterUrl())
-                                        .error(R.drawable.error_image)
-                                        .into(posterImageView);
-
-                                Log.e("PRUEBA", (pelicula.getPosterUrl()));
-                                TextView titleTextView = new TextView(MainActivity.this);
-
-                                LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(
-                                        LinearLayout.LayoutParams.MATCH_PARENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT);
-                                titleParams.setMargins(0, 15, 0, 50);
-                                titleTextView.setLayoutParams(titleParams);
-                                titleTextView.setText(pelicula.getTitle());
-                                titleTextView.setGravity(Gravity.CENTER);
-                                titleTextView.setTextColor(Color.BLACK);
-                                titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-                                movieLayout.addView(posterImageView);
-                                movieLayout.addView(titleTextView);
-
-                                movieContainerLayout.addView(movieLayout);
-                            }
+                            // Mostrar las películas en la interfaz de usuario
+                            mostrarPeliculas(tuListaDePeliculasEnCartelera);
                         }
                     });
                 } else {
@@ -133,79 +107,59 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void performSearch(String searchTerm) {
-        OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url(BASE_URL + "/3/movie/now_playing" +
-                        "?api_key=" + API_KEY +
-                        "&language=" + LANGUAGE +
-                        "&region=" + REGION +
-                        "&query=" + searchTerm)
-                .build();
+        List<Pelicula> peliculasFiltradas = filtrarPeliculas(tuListaDePeliculasEnCartelera, searchTerm);
+        mostrarPeliculas(peliculasFiltradas);
+    }
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    final String responseData = response.body().string();
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            JsonObject jsonObject = JsonParser.parseString(responseData).getAsJsonObject();
-                            JsonArray resultsArray = jsonObject.getAsJsonArray("results");
-                            Type listType = new TypeToken<List<Pelicula>>() {}.getType();
-                            List<Pelicula> peliculas = new Gson().fromJson(resultsArray, listType);
-
-                            LinearLayout movieContainerLayout = findViewById(R.id.scrollcontent);
-
-                            // Limpiar la vista antes de agregar nuevos resultados
-                            movieContainerLayout.removeAllViews();
-
-                            for (Pelicula pelicula : peliculas) {
-                                LinearLayout movieLayout = new LinearLayout(MainActivity.this);
-                                movieLayout.setOrientation(LinearLayout.VERTICAL);
-
-                                ImageView posterImageView = new ImageView(MainActivity.this);
-                                posterImageView.setLayoutParams(new LinearLayout.LayoutParams(
-                                        LinearLayout.LayoutParams.MATCH_PARENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT));
-                                posterImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
-                                Picasso.get()
-                                        .load(pelicula.getPosterUrl())
-                                        .error(R.drawable.error_image)
-                                        .into(posterImageView);
-
-                                Log.e("PRUEBA", (pelicula.getPosterUrl()));
-                                TextView titleTextView = new TextView(MainActivity.this);
-
-                                LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(
-                                        LinearLayout.LayoutParams.MATCH_PARENT,
-                                        LinearLayout.LayoutParams.WRAP_CONTENT);
-                                titleParams.setMargins(0, 15, 0, 50);
-                                titleTextView.setLayoutParams(titleParams);
-                                titleTextView.setText(pelicula.getTitle());
-                                titleTextView.setGravity(Gravity.CENTER);
-                                titleTextView.setTextColor(Color.BLACK);
-                                titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-                                movieLayout.addView(posterImageView);
-                                movieLayout.addView(titleTextView);
-
-                                movieContainerLayout.addView(movieLayout);
-                            }
-                        }
-                    });
-                } else {
-                    Log.e("MainActivity", "Error en la respuesta de búsqueda: " + response.message());
-                }
+    private List<Pelicula> filtrarPeliculas(List<Pelicula> peliculas, String searchTerm) {
+        List<Pelicula> peliculasFiltradas = new ArrayList<>();
+        for (Pelicula pelicula : peliculas) {
+            if (pelicula.getTitle().toLowerCase().contains(searchTerm.toLowerCase())) {
+                peliculasFiltradas.add(pelicula);
             }
+        }
+        return peliculasFiltradas;
+    }
+    private void mostrarPeliculas(List<Pelicula> peliculas) {
+        LinearLayout movieContainerLayout = findViewById(R.id.scrollcontent);
 
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("MainActivity", "Error en la solicitud de búsqueda: " + e.getMessage());
-            }
-        });
+        movieContainerLayout.removeAllViews();
+
+        for (Pelicula pelicula : peliculas) {
+            LinearLayout movieLayout = new LinearLayout(MainActivity.this);
+            movieLayout.setOrientation(LinearLayout.VERTICAL);
+
+            ImageView posterImageView = new ImageView(MainActivity.this);
+            posterImageView.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            posterImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+            Picasso.get()
+                    .load(pelicula.getPosterUrl())
+                    .error(R.drawable.error_image)
+                    .into(posterImageView);
+
+            Log.e("PRUEBA", (pelicula.getPosterUrl()));
+            TextView titleTextView = new TextView(MainActivity.this);
+
+            LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            titleParams.setMargins(0, 15, 0, 50);
+            titleTextView.setLayoutParams(titleParams);
+            titleTextView.setText(pelicula.getTitle());
+            titleTextView.setGravity(Gravity.CENTER);
+            titleTextView.setTextColor(Color.BLACK);
+            titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            movieLayout.addView(posterImageView);
+            movieLayout.addView(titleTextView);
+
+            movieContainerLayout.addView(movieLayout);
+        }
     }
 }
