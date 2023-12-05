@@ -1,10 +1,12 @@
 package com.davinci.clicktixmobile;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -74,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
                         "?api_key=" + API_KEY +
                         "&language=" + LANGUAGE +
                         "&region=" + REGION +
-                        "&vote_average.gte=" + minPopularity)
+                        "&popularity.gte=" + minPopularity)
                 .build();
 
+        Log.e("apir",request.toString());
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -90,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                             JsonArray resultsArray = jsonObject.getAsJsonArray("results");
                             Type listType = new TypeToken<List<Pelicula>>() {}.getType();
                             tuListaDePeliculasEnCartelera = new Gson().fromJson(resultsArray, listType);
-
-                            // Mostrar las películas en la interfaz de usuario
                             mostrarPeliculas(tuListaDePeliculasEnCartelera);
                         }
                     });
@@ -158,6 +159,17 @@ public class MainActivity extends AppCompatActivity {
             titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             movieLayout.addView(posterImageView);
             movieLayout.addView(titleTextView);
+
+            movieLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, PeliculaDetalleActivity.class);
+
+                    intent.putExtra("pelicula_id", pelicula.getId());
+
+                    startActivity(intent);
+                }
+            });
 
             movieContainerLayout.addView(movieLayout);
         }
