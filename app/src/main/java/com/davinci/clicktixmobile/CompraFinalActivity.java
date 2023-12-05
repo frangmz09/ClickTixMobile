@@ -14,7 +14,7 @@ public class CompraFinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compra_final);
 
-        ImageButton backButton = findViewById(R.id.btn_volverAfunciones);
+        ImageButton backButton = findViewById(R.id.btn_volver_register);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
