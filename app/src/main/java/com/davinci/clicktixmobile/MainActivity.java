@@ -42,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         OkHttpClient client = new OkHttpClient();
+        double minPopularity = 700.0;
 
         Request request = new Request.Builder()
                 .url(BASE_URL + "/3/movie/now_playing" +
                         "?api_key=" + API_KEY +
                         "&language=" + LANGUAGE +
-                        "&region=" + REGION)
+                        "&region=" + REGION +
+                        "&vote_average.gte=" + minPopularity)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
