@@ -45,6 +45,13 @@ dependencies {
     //FIN de dependencias DE FireBase
     implementation("com.google.firebase:firebase-firestore")
     //FIN de dependencias DE FireStore
+    // IMPLEMENTACION de GSON
+    implementation ("com.google.code.gson:gson:2.8.9")
+    // Implementacion OKHTTP
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    // Prueba imagenes
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
