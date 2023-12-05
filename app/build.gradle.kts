@@ -45,6 +45,8 @@ dependencies {
     //IMPLEMENTACION AUTHENTICATION
     implementation("com.google.firebase:firebase-auth")
     //FIN de dependencias DE FireBase
+    implementation("com.google.firebase:firebase-firestore")
+    //FIN de dependencias DE FireStore
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
