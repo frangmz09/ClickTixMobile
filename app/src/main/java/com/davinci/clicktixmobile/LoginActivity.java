@@ -70,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
                     mensajeDeError.setText(R.string.msg_error_login3);
                     mensajeDeError.setVisibility(View.VISIBLE);
                 } else {
+                    mensajeDeError.setVisibility(View.GONE);
+
                     mAuth.signInWithEmailAndPassword(String.valueOf(email.getText()), String.valueOf(password.getText()))
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
