@@ -7,8 +7,8 @@
     tools:context=".PaymentActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,13 +30,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/btn_volverAfunciones"
+                android:id="@+id/btn_volver_register"
                 android:layout_width="112dp"
                 android:layout_height="61dp"
                 android:layout_weight="1"
                 android:background="#FAFAFA"
-                app:srcCompat="@drawable/flecha_izquierda"
-                android:contentDescription="@string/boton_para_back" />
+                android:contentDescription="@string/boton_para_back"
+                app:srcCompat="@drawable/flecha_izquierda" />
 
             <ImageView
                 android:id="@+id/imgLogoNav"
@@ -64,8 +64,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
