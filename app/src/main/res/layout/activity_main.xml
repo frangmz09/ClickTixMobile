@@ -15,7 +15,7 @@
         android:background="#FAFAFA"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,37 +47,17 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="410dp"
-        android:layout_height="203dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbar">
-
-        <ImageView
-            android:id="@+id/id_promo"
-            android:layout_width="409dp"
-            android:layout_height="200dp"
-            app:srcCompat="@drawable/promocion" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="410dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="3dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintBottom_toTopOf="@id/navbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_promo">
+        app:layout_constraintTop_toBottomOf="@+id/navbar">
 
         <SearchView
             android:id="@+id/id_search"
@@ -89,23 +69,24 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="274dp">
+            android:layout_height="475dp">
 
             <LinearLayout
-                android:id="@+id/content_scroll"
-                android:layout_width="wrap_content"
+                android:id="@+id/scrollcontent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" />
+                android:orientation="vertical"></LinearLayout>
         </ScrollView>
 
     </LinearLayout>

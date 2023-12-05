@@ -38,6 +38,8 @@
     <string name="ticket_seats_const">Numero Entradas:</string>
     <string name="cerrar_sesion">Cerrar sesion</string>
     <string name="enviar">Enviar</string>
+    <string name="width_portada_home">500</string>
+
 
 
 </resources>

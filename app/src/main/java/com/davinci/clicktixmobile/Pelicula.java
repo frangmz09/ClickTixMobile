@@ -1,16 +1,15 @@
 package com.davinci.clicktixmobile;
 public class Pelicula {
-    // Otras propiedades de la película
-    String posterPath;
+    private String poster_path;
+    private String title;
+    private static final String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+    private static String release_date;
 
-    private static final String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"; // El tamaño 'w500' puede variar según tus necesidades
-
-    // Getter y setter para otras propiedades
+    private static String overview;
 
     public String getPosterUrl() {
-        return BASE_IMAGE_URL + posterPath; // Asegúrate de tener la propiedad posterPath en tu clase Pelicula
+        return BASE_IMAGE_URL + poster_path;
     }
-    private String title;
 
     public String getTitle() {
         return title;
