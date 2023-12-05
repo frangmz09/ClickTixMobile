@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
                                 posterImageView.setLayoutParams(new LinearLayout.LayoutParams(
                                         LinearLayout.LayoutParams.MATCH_PARENT,
                                         LinearLayout.LayoutParams.WRAP_CONTENT));
-                                // Ajusta la escala de la imagen para que no deforme las demás vistas
+
                                 posterImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-                                // Utiliza Picasso para cargar la imagen desde la URL
+
                                 Picasso.get().load(pelicula.getPosterUrl()).into(posterImageView);
 
                                 TextView titleTextView = new TextView(MainActivity.this);
