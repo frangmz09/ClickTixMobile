@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            app:srcCompat="@drawable/loading" />
 
     </LinearLayout>
 
@@ -127,7 +127,7 @@
             android:contentDescription="TODO" />
 
         <ImageView
-            android:id="@+id/imgLogoNav"
+            android:id="@+id/id_logo_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="45dp"

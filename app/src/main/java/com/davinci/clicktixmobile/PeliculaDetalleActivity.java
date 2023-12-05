@@ -33,6 +33,14 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pelicula_detail);
+        ImageView back_home = findViewById(R.id.id_logo_home);
+        back_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PeliculaDetalleActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         int peliculaId = getIntent().getIntExtra("pelicula_id", -1);
         if (peliculaId != -1) {

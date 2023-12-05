@@ -44,7 +44,7 @@
             android:contentDescription="TODO" />
 
         <ImageView
-            android:id="@+id/id_logo_tickets"
+            android:id="@+id/id_logo_home"
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

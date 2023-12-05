@@ -30,7 +30,7 @@
             app:srcCompat="@drawable/menu_hambur" />
 
         <ImageView
-            android:id="@+id/id_logo_tickets"
+            android:id="@+id/id_logo_home"
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -109,14 +109,6 @@
             android:layout_weight="1"
             android:padding="15dp"
             app:srcCompat="@drawable/tickets" />
-
-        <ImageView
-            android:id="@+id/id_home"
-            android:layout_width="27dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="10dp"
-            app:srcCompat="@drawable/home" />
 
         <ImageView
             android:id="@+id/id_soporte"

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class TicketsActivity extends AppCompatActivity {
 
@@ -25,6 +26,15 @@ public class TicketsActivity extends AppCompatActivity {
             }
 
 
+        });
+
+        ImageView back_home = findViewById(R.id.id_logo_home);
+        back_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicketsActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
         });
 
 

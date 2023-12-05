@@ -31,7 +31,7 @@
             android:contentDescription="@string/boton_para_back" />
 
         <ImageView
-            android:id="@+id/imgLogoNav"
+            android:id="@+id/id_logo_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="45dp"

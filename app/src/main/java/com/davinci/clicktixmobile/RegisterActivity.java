@@ -73,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                     mensajeDeError.setText(R.string.msg_error_password_mismatch);
                     mensajeDeError.setVisibility(View.VISIBLE);
                 } else {
+                    mensajeDeError.setVisibility(View.GONE);
 
                     mAuth.createUserWithEmailAndPassword(emailText, passwordText)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {

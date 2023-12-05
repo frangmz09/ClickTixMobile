@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,14 @@ public class VerificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
-
+        ImageView back_home = findViewById(R.id.id_logo_home);
+        back_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VerificationActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
         Button btn = findViewById(R.id.btnEnviarVerificacion);
         TextView tv = findViewById(R.id.txt_mensaje_verificacion);
         Intent intent = getIntent();
