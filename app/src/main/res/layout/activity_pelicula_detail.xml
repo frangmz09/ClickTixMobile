@@ -7,6 +7,9 @@
     android:background="#D8D8D8"
     tools:context=".PeliculaDetalleActivity">
 
+
+
+
     <LinearLayout
         android:id="@+id/containerPortada"
         android:layout_width="407dp"
@@ -22,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="@string/tituloPelicula"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -33,13 +35,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/pelicula_foto_prueba" />
+            app:srcCompat="@drawable/ic_launcher_foreground" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/containerDescripcionPelicula"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:background="#FAFAFA"
@@ -67,8 +69,8 @@
             android:id="@+id/txtSinopsis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="@string/sinopsisContenido" />
+            android:layout_marginTop="2dp" />
+
 
         <TextView
             android:id="@+id/txtNombre"
@@ -76,31 +78,20 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="5dp"
-            android:text="@string/nombrePelicula"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/genero"
             android:textStyle="bold"
             tools:paddingBottom="5dp" />
-
-        <TextView
-            android:id="@+id/txtClasificacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:text="@string/clasificacion"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:text="@string/fecha_de_estreno"
             android:textStyle="bold" />
 
         <Button
