@@ -10,11 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -126,10 +123,10 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
 
     private void mostrarDetallesEnInterfaz(String titulo, String overview, String imagenUrl, String releaseDate) {
         TextView tituloTextView = findViewById(R.id.txtTituloPelicula);
-        TextView overviewTextView = findViewById(R.id.txtSinopsis);
-        TextView subtituloTextView = findViewById(R.id.txtNombre);
+        TextView overviewTextView = findViewById(R.id.txtContacto);
+        TextView subtituloTextView = findViewById(R.id.txtTelefono);
         ImageView imagenImageView = findViewById(R.id.imgPortadaPelicula);
-        TextView releaseDateTextView = findViewById(R.id.txtFecha);
+        TextView releaseDateTextView = findViewById(R.id.txtMail);
 
         tituloTextView.setText(titulo);
         overviewTextView.setText(overview);
