@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id ("com.google.gms.google-services")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.davinci.clicktixmobile"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -33,32 +33,24 @@ android {
 }
 
 dependencies {
-
-
     implementation("com.google.android.gms:play-services-auth:20.7.0")
 
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
-    implementation (platform("com.google.firebase:firebase-bom:32.6.0"))
-    implementation ("com.google.firebase:firebase-analytics")
-    //IMPLEMENTACION FIRESTORE
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore:24.9.1")
-    //IMPLEMENTACION AUTHENTICATION
     implementation("com.google.firebase:firebase-auth")
-    //FIN de dependencias DE FireBase
-    implementation("com.google.firebase:firebase-firestore")
-    //FIN de dependencias DE FireStore
-    // IMPLEMENTACION de GSON
-    implementation ("com.google.code.gson:gson:2.8.9")
-    // Implementacion OKHTTP
-    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
-    // Prueba imagenes
-    implementation ("com.squareup.picasso:picasso:2.71828")
+
+    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.squareup.picasso:picasso:2.71828")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
+    implementation("com.android.car.ui:car-ui-lib:2.5.1")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
