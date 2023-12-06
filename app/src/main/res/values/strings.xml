@@ -41,6 +41,14 @@
     <string name="width_portada_home">500</string>
     <string name="fecha_de_estreno_label">"Fecha de Estreno: "</string>
     <string name="titulo_label">"Titulo: "</string>
-
+    <string name="dimension">Dimension</string>
+    <string name="_2d">2D</string>
+    <string name="_3d">3D</string>
+    <string name="idioma">Idioma</string>
+    <string name="ingles">Ingles</string>
+    <string name="espa_ol">Español</string>
+    <string name="cantidad_de_butacas">Cantidad de Butacas</string>
+    <string name="dia_de_la_funcion">Dia de la funcion</string>
+    <string name="cantidad_de_butacas_hint">Cantidad de butacas</string>
 
 </resources>
