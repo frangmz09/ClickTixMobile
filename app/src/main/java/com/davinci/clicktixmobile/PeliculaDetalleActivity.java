@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -65,9 +68,15 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-                Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
-                startActivity(intent);
+                if (currentUser != null) {
+                    Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Debes haber iniciado sesion para ver las funciones", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
