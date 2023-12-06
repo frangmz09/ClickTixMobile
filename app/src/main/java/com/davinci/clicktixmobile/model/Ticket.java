@@ -8,7 +8,7 @@ public class Ticket {
     private String dimension;
     private String idioma;
     private String horario;
-    private Integer cantidadButacas;
+    private String cantidadButacas;
     private String fecha;
 
 
@@ -28,7 +28,7 @@ public class Ticket {
     public Ticket(){
 
     }
-    public Ticket(String id, String email, Integer peliculaId, String dimension, String idioma, String horario, Integer cantidadButacas, String fecha) {
+    public Ticket(String id, String email, Integer peliculaId, String dimension, String idioma, String horario, String cantidadButacas, String fecha) {
         this.id = id;
         this.email = email;
         this.peliculaId = peliculaId;
@@ -87,11 +87,11 @@ public class Ticket {
         this.horario = horario;
     }
 
-    public Integer getCantidadButacas() {
+    public String getCantidadButacas() {
         return cantidadButacas;
     }
 
-    public void setCantidadButacas(Integer cantidadButacas) {
+    public void setCantidadButacas(String cantidadButacas) {
         this.cantidadButacas = cantidadButacas;
     }
 

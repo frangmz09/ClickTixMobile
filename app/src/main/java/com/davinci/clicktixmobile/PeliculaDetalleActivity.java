@@ -29,6 +29,8 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
     private static final String API_KEY = "44f9ad3c77d25563ced721e526744397";
     private static final String LANGUAGE = "es-ES";
     private static final String REGION = "AR";
+
+    private Integer idPeliculaTicket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,8 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         });
 
         int peliculaId = getIntent().getIntExtra("pelicula_id", -1);
+
+        idPeliculaTicket = peliculaId;
         if (peliculaId != -1) {
             obtenerDetallesPelicula(peliculaId);
         } else {
@@ -67,6 +71,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
+                intent.putExtra("ID_PELICULA", idPeliculaTicket);
                 startActivity(intent);
             }
         });

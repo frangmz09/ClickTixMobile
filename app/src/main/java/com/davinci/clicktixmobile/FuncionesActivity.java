@@ -16,16 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.davinci.clicktixmobile.model.Ticket;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.UUID;
 
 
 public class FuncionesActivity extends AppCompatActivity {
 
     private Ticket ticket;
+    private FirebaseAuth mAuth;
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,9 @@ public class FuncionesActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 System.out.println(ticket.toStringTicket());
+
+
+
                 Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
                 startActivity(intent);
             }
@@ -175,17 +181,50 @@ public class FuncionesActivity extends AppCompatActivity {
                 ticket.setHorario((String) radioButton22.getText());
             }
         });
-        try {
-            TextInputEditText editText = findViewById(R.id.cantidadButacas);
 
-        String cantidadButacasString = Objects.requireNonNull(editText.getText()).toString();
-            Integer cantidadButacas = Integer.parseInt(cantidadButacasString);
-            ticket.setCantidadButacas(cantidadButacas);
 
-        } catch (NumberFormatException e) {
+        RadioGroup radioGroupButacas = findViewById(R.id.radioGroupButacas);
 
-            e.printStackTrace();
-        }
+        radioGroupButacas.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.butaca1) {
+
+                RadioButton butaca1 = findViewById(R.id.butaca1);
+                System.out.println("Seleccionado: " + butaca1.getText());
+                ticket.setCantidadButacas((String) butaca1.getText());
+            } else if (checkedId == R.id.butaca2) {
+
+                RadioButton butaca2 = findViewById(R.id.butaca2);
+
+                System.out.println("Seleccionado: " + butaca2.getText());
+                ticket.setCantidadButacas((String) butaca2.getText());
+            }else if (checkedId == R.id.butaca3) {
+
+                RadioButton butaca3 = findViewById(R.id.butaca3);
+
+                System.out.println("Seleccionado: " + butaca3.getText());
+                ticket.setCantidadButacas((String) butaca3.getText());
+            }else if (checkedId == R.id.butaca4) {
+
+                RadioButton butaca4 = findViewById(R.id.butaca4);
+                System.out.println("Seleccionado: " + butaca4.getText());
+                ticket.setCantidadButacas((String) butaca4.getText());
+            }
+        });
+
+        mAuth = FirebaseAuth.getInstance();
+        String emailCliente = mAuth.getCurrentUser().getEmail().toString();
+
+        ticket.setIdEmail(emailCliente);
+        UUID uuid = UUID.randomUUID();
+        String uuidString = uuid.toString();
+
+        ticket.setId(uuidString);
+
+        Intent intent = getIntent();
+
+        int idPelicula = intent.getIntExtra("ID_PELICULA", -1);
+
+        ticket.setPeliculaId(idPelicula);
 
 
         
@@ -196,7 +235,7 @@ public class FuncionesActivity extends AppCompatActivity {
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Crear un Intent para pasar de FuncionesActivity a ActivityPayment
                 Intent intent = new Intent(FuncionesActivity.this, PeliculaDetalleActivity.class);
                 startActivity(intent);
             }
