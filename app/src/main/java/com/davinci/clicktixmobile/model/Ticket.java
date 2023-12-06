@@ -12,6 +12,22 @@ public class Ticket {
     private String fecha;
 
 
+    public String toStringTicket() {
+        return "Ticket{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", peliculaId=" + peliculaId +
+                ", dimension='" + dimension + '\'' +
+                ", idioma='" + idioma + '\'' +
+                ", horario='" + horario + '\'' +
+                ", cantidadButacas='" + cantidadButacas + '\'' +
+                ", fecha='" + fecha + '\'' +
+                '}';
+    }
+
+    public Ticket(){
+
+    }
     public Ticket(String id, String email, Integer peliculaId, String dimension, String idioma, String horario, Integer cantidadButacas, String fecha) {
         this.id = id;
         this.email = email;
@@ -87,3 +103,6 @@ public class Ticket {
         this.fecha = fecha;
     }
 }
+
+
+

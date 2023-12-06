@@ -15,7 +15,6 @@
         android:elevation="8dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,235 +41,230 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="407dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="3dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/txt_dimension"
-            android:layout_width="match_parent"
-            android:layout_height="81dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:text="Dimension"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:layout_width="406dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="2D" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#B61C1C"
-                android:text="3D" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout7"
         android:layout_width="409dp"
-        android:layout_height="110dp"
-        android:layout_marginEnd="2dp"
+        android:layout_height="648dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-        <TextView
-            android:id="@+id/txt_elegir_funcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Seleccionar Día"
-            android:textSize="24sp" />
+        app:layout_constraintTop_toBottomOf="@+id/containerNavbar" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:background="#FAFAFA"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <Button
-                android:id="@+id/button5"
+            <TextView
+                android:id="@+id/textDimension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dimension"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDimension"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="24/12" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button6"
+                <RadioButton
+                    android:id="@+id/radioButton2D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2D" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3D" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textIdioma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/idioma"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,InvalidId" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupIdioma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="25/12" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radioButtonIngles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingles" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonEspañol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/espa_ol" />
+
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textDias"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="26/12" />
-        </LinearLayout>
+                android:layout_marginTop="10dp"
+                android:text="@string/dia_de_la_funcion"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,InvalidId" />
 
-    </LinearLayout>
+            <RadioGroup
+                android:id="@+id/radioGroupFechas"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="409dp"
-        android:layout_height="104dp"
-        android:layout_marginEnd="2dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+            </RadioGroup>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Idioma"
-            android:textSize="24sp" />
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="?android:attr/listDivider" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textHorario"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#B61C1C"
-                android:text="Español" />
+                android:layout_marginTop="10dp"
+                android:text="Horario"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,InvalidId" />
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:id="@+id/radioGroupHorarios"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="Ingles" />
-        </LinearLayout>
-    </LinearLayout>
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="409dp"
-        android:layout_height="94dp"
-        android:layout_marginBottom="3dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+                    <!-- Fila 1 -->
+                    <RadioButton
+                        android:id="@+id/radioButton12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="12:00"
+                        />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Horario"
-            android:textSize="24sp" />
+                    <RadioButton
+                        android:id="@+id/radioButton14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="14:00" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radioButton16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="16:00" />
 
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="wrap_content"
+                    <!-- Fila 2 -->
+                    <RadioButton
+                        android:id="@+id/radioButton18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="18:00" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="20:00" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="22:00" />
+
+
+
+            </RadioGroup>
+
+
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/textButacas"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#B61C1C"
-                android:text="12:00hs" />
-
-            <Button
-                android:id="@+id/button12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/primary_color"
-                android:text="16:00hs" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout10"
-        android:layout_width="412dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btn_siguiente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Cantidad de Butacas"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+                android:text="@string/cantidad_de_butacas"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,InvalidId" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cantidadButacasLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Cantidad de butacas">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cantidadButacas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ingrese la cantidad de butacas" />
+                    android:inputType="number" />
+
             </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_siguiente"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:backgroundTint="@color/primary_color"
+                android:text="Continuar" />
+
+
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_siguiente"
-        android:layout_width="202dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="105dp"
-        android:backgroundTint="@color/primary_color"
-        android:text="Siguiente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.davinci.clicktixmobile"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.davinci.clicktixmobile"

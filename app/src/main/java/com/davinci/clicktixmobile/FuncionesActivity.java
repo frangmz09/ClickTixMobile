@@ -1,37 +1,196 @@
 package com.davinci.clicktixmobile;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.davinci.clicktixmobile.model.Ticket;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Objects;
+
+
 public class FuncionesActivity extends AppCompatActivity {
 
+    private Ticket ticket;
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funciones);
-        ImageView back_home = findViewById(R.id.id_logo_home);
-        back_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FuncionesActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         Button btnSiguiente = findViewById(R.id.btn_siguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crear un Intent para pasar de FuncionesActivity a ActivityPayment
-                Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
-                startActivity(intent);
+
+                System.out.println(ticket.toStringTicket());
+//                Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
+//                startActivity(intent);
             }
         });
+
+
+
+        this.ticket = new Ticket();
+
+
+        RadioGroup radioGroupDimension = findViewById(R.id.radioGroupDimension);
+
+        radioGroupDimension.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButton2D) {
+
+                RadioButton radioButton2D = findViewById(R.id.radioButton2D);
+
+                System.out.println("Seleccionado: " + radioButton2D.getText());
+
+                ticket.setDimension((String) radioButton2D.getText());
+
+
+            } else if (checkedId == R.id.radioButton3D) {
+
+                RadioButton radioButton3D = findViewById(R.id.radioButton3D);
+
+                System.out.println("Seleccionado: " + radioButton3D.getText());
+                ticket.setDimension((String) radioButton3D.getText());
+            }
+        });
+
+
+        RadioGroup radioGroupIdioma = findViewById(R.id.radioGroupIdioma);
+
+        radioGroupIdioma.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButtonEspañol) {
+
+                RadioButton radioButtonEspañol = findViewById(R.id.radioButtonEspañol);
+
+                System.out.println("Seleccionado: " + radioButtonEspañol.getText());
+
+
+                ticket.setIdioma((String) radioButtonEspañol.getText());
+
+            } else if (checkedId == R.id.radioButtonIngles) {
+
+                RadioButton radioButtonIngles = findViewById(R.id.radioButtonIngles);
+
+                System.out.println("Seleccionado: " + radioButtonIngles.getText());
+
+                ticket.setIdioma((String) radioButtonIngles.getText());
+            }
+        });
+
+
+
+
+
+        RadioGroup radioGroupFecha = findViewById(R.id.radioGroupFechas);
+
+
+        for (int i = 0; i < 4; i++) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DAY_OF_YEAR, i);
+
+
+            SimpleDateFormat sdf = new SimpleDateFormat("d/M", Locale.getDefault());
+            String formattedDate = sdf.format(calendar.getTime());
+
+
+            RadioButton radioButton = new RadioButton(this);
+            radioButton.setText(formattedDate);
+
+
+            radioGroupFecha.addView(radioButton);
+        }
+
+        radioGroupFecha.setOnCheckedChangeListener((group, checkedId) -> {
+
+            RadioButton selectedRadioButton = findViewById(checkedId);
+            if (selectedRadioButton != null) {
+                String selectedDate = selectedRadioButton.getText().toString();
+                System.out.println("Fecha seleccionada: " + selectedDate);
+
+                ticket.setFecha(selectedDate);
+            }
+        });
+
+
+        RadioGroup radioGroupHorario = findViewById(R.id.radioGroupHorarios);
+
+        radioGroupHorario.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButton12) {
+
+                RadioButton radioButton12 = findViewById(R.id.radioButton12);
+
+                System.out.println("Seleccionado: " + radioButton12.getText());
+
+                ticket.setHorario((String) radioButton12.getText());
+            } else if (checkedId == R.id.radioButton14) {
+
+                RadioButton radioButton14 = findViewById(R.id.radioButton14);
+
+                System.out.println("Seleccionado: " + radioButton14.getText());
+                ticket.setHorario((String) radioButton14.getText());
+            }
+            else if (checkedId == R.id.radioButton16) {
+
+                RadioButton radioButton16 = findViewById(R.id.radioButton16);
+
+                System.out.println("Seleccionado: " + radioButton16.getText());
+                ticket.setHorario((String) radioButton16.getText());
+            }
+            else if (checkedId == R.id.radioButton18) {
+
+                RadioButton radioButton18 = findViewById(R.id.radioButton18);
+
+                System.out.println("Seleccionado: " + radioButton18.getText());
+                ticket.setHorario((String) radioButton18.getText());
+            }
+            else if (checkedId == R.id.radioButton20) {
+
+                RadioButton radioButton20 = findViewById(R.id.radioButton20);
+
+                System.out.println("Seleccionado: " + radioButton20.getText());
+
+                ticket.setHorario((String) radioButton20.getText());
+            }
+            else if (checkedId == R.id.radioButton22) {
+
+                RadioButton radioButton22 = findViewById(R.id.radioButton22);
+
+                System.out.println("Seleccionado: " + radioButton22.getText());
+
+                ticket.setHorario((String) radioButton22.getText());
+            }
+        });
+        try {
+            TextInputEditText editText = findViewById(R.id.cantidadButacas);
+
+        String cantidadButacasString = Objects.requireNonNull(editText.getText()).toString();
+            Integer cantidadButacas = Integer.parseInt(cantidadButacasString);
+            ticket.setCantidadButacas(cantidadButacas);
+
+        } catch (NumberFormatException e) {
+
+            e.printStackTrace();
+        }
+
+
+        
+
+
 
         ImageButton btnAtras = findViewById(R.id.btnVolverPelicula);
         btnAtras.setOnClickListener(new View.OnClickListener() {
