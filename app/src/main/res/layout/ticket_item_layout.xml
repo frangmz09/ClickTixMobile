@@ -1,0 +1,61 @@
+<!-- res/layout/ticket_item_layout.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ticket_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/ticket_image"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/pelicula_foto_prueba" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/ticket_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título" />
+
+        <TextView
+            android:id="@+id/ticket_dimension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dimension" />
+
+        <TextView
+            android:id="@+id/ticket_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha" />
+
+        <TextView
+            android:id="@+id/ticket_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horario" />
+
+        <TextView
+            android:id="@+id/ticket_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Idioma" />
+
+        <TextView
+            android:id="@+id/ticket_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Butacas:" />
+
+    </LinearLayout>
+
+</LinearLayout>

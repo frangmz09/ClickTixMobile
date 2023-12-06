@@ -90,70 +90,78 @@
             android:translationX="29dp">
 
             <LinearLayout
-                android:id="@+id/ticket_example"
+                android:id="@+id/tickets_containerLY"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/ticket_image_container"
-                    android:layout_width="165dp"
+                    android:id="@+id/ticket_example"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/ticket_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        app:srcCompat="@drawable/pelicula_foto_prueba" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="165dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ticket_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ticket_title_text" />
-
-                    <TextView
-                        android:id="@+id/ticket_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ticket_date_text" />
-
-                    <TextView
-                        android:id="@+id/ticket_time"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ticket_time_text" />
-
-                    <TextView
-                        android:id="@+id/ticket_language"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ticket_language_text" />
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:id="@+id/ticket_image_container"
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ticket_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/pelicula_foto_prueba" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/ticket_seats"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/ticket_title"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_seats_const" />
+                            android:text="@string/ticket_title_text" />
 
                         <TextView
-                            android:id="@+id/tickets_seats_var"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/ticket_date"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_weight="1" />
+                            android:text="@string/ticket_date_text" />
+
+                        <TextView
+                            android:id="@+id/ticket_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_time_text" />
+
+                        <TextView
+                            android:id="@+id/ticket_language"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_language_text" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/ticket_seats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/ticket_seats_const" />
+
+                            <TextView
+                                android:id="@+id/tickets_seats_var"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
