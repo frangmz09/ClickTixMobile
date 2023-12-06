@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -64,6 +65,21 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
+        });
+        ImageView ticketsLink = findViewById(R.id.id_tickets);
+        ticketsLink.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                if (currentUser != null){
+                    Intent intent = new Intent(MainActivity.this, TicketsActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "Debes haber iniciado sesion para ver tus tickets", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
         });
         ImageView soporteImageView = findViewById(R.id.id_soporte);
         soporteImageView.setOnClickListener(new View.OnClickListener() {
