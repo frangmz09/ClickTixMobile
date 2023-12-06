@@ -66,14 +66,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtSinopsis"
+            android:id="@+id/txtContacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp" />
 
 
         <TextView
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -81,14 +81,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtGenero"
+            android:id="@+id/txtDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             tools:paddingBottom="5dp" />
 
         <TextView
-            android:id="@+id/txtFecha"
+            android:id="@+id/txtMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
