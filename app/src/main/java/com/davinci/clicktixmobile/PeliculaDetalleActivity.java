@@ -96,12 +96,10 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            // Procesar la respuesta para obtener detalles de la película
                             procesarDetallesPelicula(responseData);
                         }
                     });
                 } else {
-                    // Manejar el error en la respuesta
                 }
             }
 
