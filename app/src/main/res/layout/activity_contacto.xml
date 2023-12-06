@@ -99,7 +99,9 @@
             android:layout_width="554dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:clickable="true"
+            android:onClick="openMainActivity" />
 
         <ImageView
             android:id="@+id/id_perfil_tickets"
