@@ -38,8 +38,8 @@ public class FuncionesActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 System.out.println(ticket.toStringTicket());
-//                Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -196,7 +196,7 @@ public class FuncionesActivity extends AppCompatActivity {
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crear un Intent para pasar de FuncionesActivity a ActivityPayment
+
                 Intent intent = new Intent(FuncionesActivity.this, PeliculaDetalleActivity.class);
                 startActivity(intent);
             }
