@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        ImageView soporteImageView = findViewById(R.id.id_soporte);
+        soporteImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ContactoActivity.class);
+                startActivity(intent);
+            }
+        });
         SearchView searchView = findViewById(R.id.id_search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
