@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         EditText confirmpassword = findViewById(R.id.input_confirmpassword_register);
         TextView mensajeDeError = findViewById(R.id.mensaje_error_register);
 
-        ImageButton backButton = findViewById(R.id.btn_volver_register);
+        ImageButton backButton = findViewById(R.id.btn_volver_home);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
