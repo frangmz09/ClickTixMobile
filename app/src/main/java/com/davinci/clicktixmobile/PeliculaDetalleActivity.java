@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.squareup.picasso.Picasso;
@@ -33,6 +36,10 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pelicula_detail);
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
         ImageView back_home = findViewById(R.id.id_logo_home);
         back_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,14 +75,32 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
-                intent.putExtra("ID_PELICULA", idPeliculaTicket);
-                intent.putExtra("TITULO",tituloPelicula);
-                startActivity(intent);
+
+                if (user != null) { 
+
+                    if (user.isEmailVerified()) {
+                        Toast.makeText(getApplicationContext(), "Usuario autenticado y verificado", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
+                        intent.putExtra("ID_PELICULA", idPeliculaTicket);
+                        intent.putExtra("TITULO",tituloPelicula);
+                        startActivity(intent);
+
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), "Usuario autenticado pero correo electrónico no verificado", Toast.LENGTH_SHORT).show();
+
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Usuario no logueado", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
             }
         });
-
-
 
 
 
