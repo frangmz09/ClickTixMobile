@@ -4,14 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.davinci.clicktixmobile.model.Ticket;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class PaymentActivity extends AppCompatActivity {
@@ -20,11 +28,27 @@ public class PaymentActivity extends AppCompatActivity {
     private TextInputLayout nombreTitularLayout;
     private TextInputLayout codigoSeguridadLayout;
     private TextInputLayout fechaVencimientoLayout;
-
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+
+
+
+
+        Intent intent = getIntent();
+        Ticket ticket = (Ticket) intent.getSerializableExtra("TICKET");
+        System.out.println(ticket.toStringTicket());
+
+        db = FirebaseFirestore.getInstance();
+
+
+
+
+
+
 
         // Inicializar los TextInputLayout
         numeroTarjetaLayout = findViewById(R.id.numeroTarjeta);
@@ -41,7 +65,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton backButton = findViewById(R.id.btn_volver_register);
+        ImageButton backButton = findViewById(R.id.btn_volver_home);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +80,10 @@ public class PaymentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validarCampos()) {
                     realizarPago();
+                    crearDocumento(ticket);
+                    Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
+                    intent.putExtra("TICKET", ticket);
+                    startActivity(intent);
                 }
             }
         });
@@ -140,5 +168,28 @@ public class PaymentActivity extends AppCompatActivity {
         Toast.makeText(this, "¡Su pago ha sido confirmado!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
         startActivity(intent);
+    }
+    private void crearDocumento(Ticket ticket) {
+
+        Map<String, Object> datosDocumento = new HashMap<>();
+        datosDocumento.put("cantidad_butacas", ticket.getCantidadButacas());
+        datosDocumento.put("dimension", ticket.getDimension());
+        datosDocumento.put("email", ticket.getEmail());
+        datosDocumento.put("fecha", ticket.getFecha());
+        datosDocumento.put("horario", ticket.getHorario());
+        datosDocumento.put("idioma", ticket.getIdioma());
+        datosDocumento.put("pelicula_id", ticket.getPeliculaId());
+        datosDocumento.put("fecha_compra", LocalDate.now().toString());
+
+
+        db.collection("tickets")
+                .add(datosDocumento)
+                .addOnSuccessListener(documentReference -> {
+                    String idDocumento = documentReference.getId();
+                    Log.d("TAG", "Documento creado con ID: " + idDocumento);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("TAG", "Error al crear el documento", e);
+                });
     }
 }

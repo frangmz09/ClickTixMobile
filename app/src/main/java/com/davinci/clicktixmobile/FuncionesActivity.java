@@ -37,14 +37,16 @@ public class FuncionesActivity extends AppCompatActivity {
 
         Button btnSiguiente = findViewById(R.id.btn_siguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
 
                 System.out.println(ticket.toStringTicket());
 
-
-
                 Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
+                intent.putExtra("TICKET", ticket);
+
                 startActivity(intent);
             }
         });
@@ -225,6 +227,12 @@ public class FuncionesActivity extends AppCompatActivity {
         int idPelicula = intent.getIntExtra("ID_PELICULA", -1);
 
         ticket.setPeliculaId(idPelicula);
+
+        String tituloPelicula = intent.getStringExtra("TITULO");
+
+
+        ticket.setTitulo(tituloPelicula);
+
 
 
         

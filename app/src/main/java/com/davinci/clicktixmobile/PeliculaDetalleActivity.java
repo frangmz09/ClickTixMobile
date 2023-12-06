@@ -10,11 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -31,6 +28,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
     private static final String REGION = "AR";
 
     private Integer idPeliculaTicket;
+    private String tituloPelicula;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +51,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
             startActivity(intent);
         }
-        ImageButton backButton = findViewById(R.id.btn_volver_register);
+        ImageButton backButton = findViewById(R.id.btn_volver_home);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +70,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(PeliculaDetalleActivity.this, FuncionesActivity.class);
                 intent.putExtra("ID_PELICULA", idPeliculaTicket);
+                intent.putExtra("TITULO",tituloPelicula);
                 startActivity(intent);
             }
         });
@@ -136,6 +135,8 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         ImageView imagenImageView = findViewById(R.id.imgPortadaPelicula);
         TextView releaseDateTextView = findViewById(R.id.txtFecha);
 
+
+        tituloPelicula = titulo;
         tituloTextView.setText(titulo);
         overviewTextView.setText(overview);
         releaseDateTextView.setText(String.format("%s%s", getString(R.string.fecha_de_estreno_label), releaseDate));
