@@ -33,7 +33,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtContacto"
+            android:id="@+id/txtSinopsis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -41,7 +41,7 @@
 
 
         <TextView
-            android:id="@+id/txtTelefono"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -50,7 +50,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtDireccion"
+            android:id="@+id/txtGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Direccion: Avenida Corrientes 2037"
@@ -58,7 +58,7 @@
             tools:paddingBottom="5dp" />
 
         <TextView
-            android:id="@+id/txtMail"
+            android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
