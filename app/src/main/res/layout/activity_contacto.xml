@@ -9,6 +9,40 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/containerNavbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="#FAFAFA"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/containerPortada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_volver_register"
+            android:layout_width="112dp"
+            android:layout_height="61dp"
+            android:layout_weight="1"
+            android:background="#FAFAFA"
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/flecha_izquierda" />
+
+        <ImageView
+            android:id="@+id/id_logo_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="45dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logo"
+            tools:layout_marginStart="0dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/containerDescripcionPelicula"
         android:layout_width="408dp"
         android:layout_height="307dp"
@@ -18,10 +52,10 @@
         android:paddingTop="30dp"
         android:paddingEnd="20dp"
         android:paddingBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/containerNavbar"
         tools:circularflow_radiusInDP="20dp">
 
         <TextView
@@ -72,73 +106,6 @@
             android:layout_marginTop="2dp"
             android:text="Gracias por utilizar nuestra app!" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/navbar"
-        android:layout_width="411dp"
-        android:layout_height="103dp"
-        android:background="#FAFAFA"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/id_menuHamb_tickets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="20dp"
-            app:srcCompat="@drawable/menu_hambur" />
-
-        <ImageView
-            android:id="@+id/id_logo_tickets"
-            android:layout_width="554dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/logo"
-            android:clickable="true"
-            android:onClick="openMainActivity" />
-
-        <ImageView
-            android:id="@+id/id_perfil_tickets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="20dp"
-            app:srcCompat="@drawable/perfil" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:background="#FAFAFA"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/id_tickets"
-            android:layout_width="36dp"
-            android:layout_height="69dp"
-            android:layout_weight="1"
-            android:padding="15dp"
-            app:srcCompat="@drawable/tickets" />
-
-        <ImageView
-            android:id="@+id/id_soporte"
-            android:layout_width="wrap_content"
-            android:layout_height="71dp"
-            android:layout_weight="1"
-            android:padding="13dp"
-            app:srcCompat="@drawable/soporte" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
