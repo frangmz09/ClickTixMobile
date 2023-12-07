@@ -55,6 +55,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerNavbar">
 
+        <LinearLayout
+            android:id="@+id/linearVerificacion"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FAFAFA"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="31dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_mail" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:text="Verificar correo electronico"
+                android:textSize="16sp" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnCerrarSesion"
             android:layout_width="match_parent"
