@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,11 +30,16 @@ public class FuncionesActivity extends AppCompatActivity {
 
     private Ticket ticket;
     private FirebaseAuth mAuth;
-    @SuppressLint("NonConstantResourceId")
+
+    private Double precioPorDimension;
+    private Integer cantidadDeButacasElegidas= 0;
+    private Double total= 0d;
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funciones);
+
 
         Button btnSiguiente = findViewById(R.id.btn_siguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +85,7 @@ public class FuncionesActivity extends AppCompatActivity {
                 System.out.println("Seleccionado: " + radioButton2D.getText());
 
                 ticket.setDimension((String) radioButton2D.getText());
-
+                precioPorDimension=1000d;
 
             } else if (checkedId == R.id.radioButton3D) {
 
@@ -87,7 +93,9 @@ public class FuncionesActivity extends AppCompatActivity {
 
                 System.out.println("Seleccionado: " + radioButton3D.getText());
                 ticket.setDimension((String) radioButton3D.getText());
+                precioPorDimension=2000d;
             }
+            calcularTotal();
         });
 
 
@@ -206,24 +214,29 @@ public class FuncionesActivity extends AppCompatActivity {
                 RadioButton butaca1 = findViewById(R.id.butaca1);
                 System.out.println("Seleccionado: " + butaca1.getText());
                 ticket.setCantidadButacas((String) butaca1.getText());
+                cantidadDeButacasElegidas=1;
             } else if (checkedId == R.id.butaca2) {
 
                 RadioButton butaca2 = findViewById(R.id.butaca2);
 
                 System.out.println("Seleccionado: " + butaca2.getText());
                 ticket.setCantidadButacas((String) butaca2.getText());
+                cantidadDeButacasElegidas=2;
             }else if (checkedId == R.id.butaca3) {
 
                 RadioButton butaca3 = findViewById(R.id.butaca3);
 
                 System.out.println("Seleccionado: " + butaca3.getText());
                 ticket.setCantidadButacas((String) butaca3.getText());
+                cantidadDeButacasElegidas=3;
             }else if (checkedId == R.id.butaca4) {
 
                 RadioButton butaca4 = findViewById(R.id.butaca4);
                 System.out.println("Seleccionado: " + butaca4.getText());
                 ticket.setCantidadButacas((String) butaca4.getText());
+                cantidadDeButacasElegidas=4;
             }
+            calcularTotal();
         });
 
         mAuth = FirebaseAuth.getInstance();
@@ -247,11 +260,6 @@ public class FuncionesActivity extends AppCompatActivity {
         ticket.setTitulo(tituloPelicula);
 
 
-
-        
-
-
-
         ImageButton btnAtras = findViewById(R.id.btnVolverPelicula);
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,5 +269,24 @@ public class FuncionesActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
+
+
     }
+
+    private void calcularTotal() {
+        total = cantidadDeButacasElegidas * precioPorDimension;
+        ticket.setMontoFinal(total);
+
+        TextView tv = findViewById(R.id.montoTotalValue);
+        tv.setText(total.toString());
+        ticket.setMontoFinal(total);
+    }
+
+
+
+
 }

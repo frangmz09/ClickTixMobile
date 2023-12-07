@@ -187,6 +187,7 @@ public class PaymentActivity extends AppCompatActivity {
         datosDocumento.put("idioma", ticket.getIdioma());
         datosDocumento.put("pelicula_id", ticket.getPeliculaId());
         datosDocumento.put("fecha_compra", LocalDate.now().toString());
+        datosDocumento.put("monto_final", ticket.getMontoFinal());
 
 
         db.collection("tickets")

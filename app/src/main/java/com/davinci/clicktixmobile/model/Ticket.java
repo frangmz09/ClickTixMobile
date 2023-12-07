@@ -15,6 +15,8 @@ public class Ticket implements Serializable {
 
     private String titulo;
 
+    private Double montoFinal;
+
 
 
 
@@ -47,6 +49,19 @@ public class Ticket implements Serializable {
         this.cantidadButacas = cantidadButacas;
         this.fecha = fecha;
         this.titulo = titulo;
+    }
+
+    public Ticket(String id, String email, Integer peliculaId, String dimension, String idioma, String horario, String cantidadButacas, String fecha, String titulo, Double montoFinal) {
+        this.id = id;
+        this.email = email;
+        this.peliculaId = peliculaId;
+        this.dimension = dimension;
+        this.idioma = idioma;
+        this.horario = horario;
+        this.cantidadButacas = cantidadButacas;
+        this.fecha = fecha;
+        this.titulo = titulo;
+        this.montoFinal = montoFinal;
     }
 
     public String getId() {
@@ -127,6 +142,14 @@ public class Ticket implements Serializable {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public Double getMontoFinal() {
+        return montoFinal;
+    }
+
+    public void setMontoFinal(Double montoFinal) {
+        this.montoFinal = montoFinal;
     }
 }
 

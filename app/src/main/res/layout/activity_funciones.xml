@@ -273,13 +273,37 @@
             </RadioGroup>
 
 
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/txtMontoTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/monto_total"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,InvalidId" />
+
+            <TextView
+                android:id="@+id/montoTotalValue"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:text=""
+                android:textSize="15sp"
+                tools:ignore="DuplicateIds,InvalidId" />
 
             <Button
                 android:id="@+id/btn_siguiente"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
                 android:backgroundTint="@color/primary_color"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/continue_function_btn" />
 
 
