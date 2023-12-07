@@ -96,7 +96,7 @@ public class TicketsActivity extends AppCompatActivity {
 
                                     // Puedes cargar la imagen con Picasso o Glide, por ejemplo
                                     // Picasso.get().load(ticket.getImageUrl()).into(ticketImage);
-
+                                    getMovieDetails(idFB, ticketView);
                                     tickets_containerLY.addView(ticketView);
                                 }
 
@@ -132,6 +132,45 @@ public class TicketsActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void getMovieDetails(long idFB, View ticketView) {
+
+        OkHttpClient client = new OkHttpClient();
+
+        String url = BASE_URL + "/3/movie/" + idFB + "?api_key=" + API_KEY + "&language=" + LANGUAGE;
+
+        Log.e("PRUEBA URL", url);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String responseData = response.body().string();
+                    JsonObject jsonObject = JsonParser.parseString(responseData).getAsJsonObject();
+
+                    // Obtener título e imagen de la película
+                    String title = jsonObject.get("title").getAsString();
+                    String imageUrl = "https://image.tmdb.org" + "/t/p/w500" + jsonObject.get("poster_path").getAsString();
+                    Log.e("PRUEBA URL", imageUrl);
+                    runOnUiThread(() -> {
+                        TextView titleTextView = ticketView.findViewById(R.id.ticket_title);
+                        ImageView ticketImage = ticketView.findViewById(R.id.ticket_image);
+
+                        titleTextView.setText("Título: " + title);
+                        Picasso.get().load(imageUrl).into(ticketImage);
+                    });
+                }
+            }
+        });
     }
 
 }
