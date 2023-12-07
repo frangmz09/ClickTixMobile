@@ -38,20 +38,33 @@ public class FuncionesActivity extends AppCompatActivity {
         Button btnSiguiente = findViewById(R.id.btn_siguiente);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
 
-
+            private boolean validarRadioButtons() {
+                RadioGroup[] radioGroups = {
+                        findViewById(R.id.radioGroupDimension),
+                        findViewById(R.id.radioGroupIdioma),
+                        findViewById(R.id.radioGroupFechas),
+                        findViewById(R.id.radioGroupHorarios),
+                        findViewById(R.id.radioGroupButacas)
+                };
+                for (RadioGroup radioGroup : radioGroups) {
+                    if (radioGroup.getCheckedRadioButtonId() == -1) {
+                        return false;
+                    }
+                }
+                return true;
+            }
             @Override
             public void onClick(View v) {
-
-                System.out.println(ticket.toStringTicket());
-
-                Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
-                intent.putExtra("TICKET", ticket);
-
-                startActivity(intent);
+                if (validarRadioButtons()) {
+                    System.out.println(ticket.toStringTicket());
+                    Intent intent = new Intent(FuncionesActivity.this, PaymentActivity.class);
+                    intent.putExtra("TICKET", ticket);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(FuncionesActivity.this, "Debes seleccionar todas las opciones", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
-
 
         this.ticket = new Ticket();
 
