@@ -1,6 +1,7 @@
 <!-- res/layout/ticket_item_layout.xml -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ticket_item_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +12,8 @@
         android:id="@+id/ticket_image"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:src="@drawable/pelicula_foto_prueba" />
+        android:src="@drawable/loading"
+        app:srcCompat="@drawable/loading" />
 
     <LinearLayout
         android:layout_width="0dp"

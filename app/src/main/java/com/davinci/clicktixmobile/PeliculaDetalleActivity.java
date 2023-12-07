@@ -58,7 +58,7 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
             Intent intent = new Intent(PeliculaDetalleActivity.this, MainActivity.class);
             startActivity(intent);
         }
-        ImageButton backButton = findViewById(R.id.btn_volver_home);
+        ImageButton backButton = findViewById(R.id.btn_volver_tickets);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

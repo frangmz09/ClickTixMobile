@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,11 +26,30 @@ public class CompraFinalActivity extends AppCompatActivity {
         Ticket ticket = (Ticket) intent.getSerializableExtra("TICKET");
         System.out.println(ticket.toStringTicket());
 
+
         cambiarDatos(ticket);
 
-        ImageButton backButton = findViewById(R.id.btn_volver_home);
+        ImageButton backButton = findViewById(R.id.btn_volver_tickets);
+        ImageView homeButton= findViewById(R.id.id_logo_home);
+        Button verTicketsbtn = findViewById(R.id.btn_ver_tickets);
+        verTicketsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(CompraFinalActivity.this, TicketsActivity.class);
+                startActivity(intent);
+            }
+        });
         backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(CompraFinalActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -49,18 +69,20 @@ public class CompraFinalActivity extends AppCompatActivity {
         String butacas = ticket.getCantidadButacas();
         String dimension = ticket.getDimension();
 
-        TextView txtFecha = findViewById(R.id.txt_fechaFuncion);
+        TextView txtFecha = findViewById(R.id.txt_fecha);
         txtFecha.setText(fecha);
         TextView txtHorario = findViewById(R.id.txt_hora);
         txtHorario.setText(horario);
         TextView txtIdioma = findViewById(R.id.txt_idioma);
         txtIdioma.setText(idioma);
+        TextView txtDimension = findViewById(R.id.txt_dimension);
+        txtDimension.setText(dimension);
         TextView txtButacas = findViewById(R.id.txt_cantidadButacas);
         txtButacas.setText(butacas);
 
 
         TextView txtTitulo = findViewById(R.id.txt_tituloPelicula);
-        txtTitulo.setText(pelicula + "  " + dimension);
+        txtTitulo.setText(pelicula);
 
 
 

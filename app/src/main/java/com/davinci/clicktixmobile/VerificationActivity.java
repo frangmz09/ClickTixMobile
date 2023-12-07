@@ -40,7 +40,7 @@ public class VerificationActivity extends AppCompatActivity {
             }
         }
 
-        ImageButton backButton = findViewById(R.id.btn_volver_home);
+        ImageButton backButton = findViewById(R.id.btn_volver_tickets);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

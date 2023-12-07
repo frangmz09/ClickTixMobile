@@ -6,57 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".TicketsActivity">
 
-    <ImageButton
-        android:id="@+id/btn_volver_tickets"
-        android:layout_width="0dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="363dp"
-        android:layout_weight="1"
-        android:background="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flecha_izquierda"
-        android:contentDescription="TODO" />
-
     <LinearLayout
-        android:id="@+id/navbar"
-        android:layout_width="411dp"
-        android:layout_height="103dp"
+        android:id="@+id/containerNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginBottom="37dp"
         android:background="#FAFAFA"
+
+        android:elevation="8dp"
         android:orientation="horizontal"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btn_volver_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn_volver_tickets"
+            android:layout_width="112dp"
+            android:layout_height="61dp"
             android:layout_weight="1"
-            android:padding="20dp"
-            app:srcCompat="@drawable/menu_hambur"
-            android:contentDescription="TODO" />
+            android:background="#FAFAFA"
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/flecha_izquierda" />
 
         <ImageView
             android:id="@+id/id_logo_home"
-            android:layout_width="554dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/logo" />
-
-        <ImageView
-            android:id="@+id/id_perfil_tickets"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="45dp"
             android:layout_weight="1"
-            android:padding="20dp"
-            app:srcCompat="@drawable/perfil" />
+            app:srcCompat="@drawable/logo"
+            tools:layout_marginStart="0dp" />
 
     </LinearLayout>
 
@@ -69,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navbar">
+        app:layout_constraintTop_toBottomOf="@+id/containerNavbar">
 
         <TextView
             android:id="@+id/tickets_title"
@@ -96,10 +77,45 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/empty_tickets_advice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/text_no_tickets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No se encontró ningun ticket vinculado con tu cuenta..."
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Te invitamos a"
+                        android:textAlignment="center" />
+
+                    <Button
+                        android:id="@+id/back_buttontickets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/primary_color"
+                        android:text="REVISAR NUESTRA CARTELERA"
+                        app:iconTint="@color/primary_color" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/ticket_example"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:id="@+id/ticket_image_container"

@@ -13,11 +13,9 @@ import android.widget.Toast;
 
 import com.davinci.clicktixmobile.model.Ticket;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -65,7 +63,7 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton backButton = findViewById(R.id.btn_volver_home);
+        ImageButton backButton = findViewById(R.id.btn_volver_tickets);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,4 +1,4 @@
-package com.davinci.clicktixmobile;
+package com.davinci.clicktixmobile.model;
 public class Pelicula {
     private Integer id;
 

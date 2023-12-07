@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/btn_volver_home"
+                android:id="@+id/btn_volver_tickets"
                 android:layout_width="112dp"
                 android:layout_height="61dp"
                 android:layout_weight="1"
