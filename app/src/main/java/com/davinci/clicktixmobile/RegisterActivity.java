@@ -82,19 +82,21 @@ public class RegisterActivity extends AppCompatActivity {
                                                             if (task.isSuccessful()) {
                                                                 // Proceso exitoso
                                                                 Toast.makeText(getApplicationContext(), "Correo de verificación enviado", Toast.LENGTH_SHORT).show();
+                                                                Log.d("TAG", "createUserWithEmail:success");
+
+                                                                Toast.makeText(RegisterActivity.this, "Se registro" ,
+                                                                        Toast.LENGTH_SHORT).show();
+
+                                                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+
+                                                                startActivity(intent);
+
                                                             }
                                                         }
                                                     });
                                         }
 
-                                        Log.d("TAG", "createUserWithEmail:success");
 
-                                        Toast.makeText(RegisterActivity.this, "Se registro" ,
-                                                Toast.LENGTH_SHORT).show();
-
-                                        Intent intent = new Intent(RegisterActivity.this, VerificationActivity.class);
-                                        intent.putExtra("email", emailText);
-                                        startActivity(intent);
 
 
                                     } else {
