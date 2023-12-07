@@ -1,6 +1,11 @@
 package com.davinci.clicktixmobile;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +24,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -78,7 +84,10 @@ public class PaymentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validarCampos()) {
                     realizarPago();
-                    crearDocumento(ticket);
+                    String idTicket = crearDocumento(ticket);
+
+
+
                     Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
                     intent.putExtra("TICKET", ticket);
                     startActivity(intent);
@@ -167,8 +176,8 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
         startActivity(intent);
     }
-    private void crearDocumento(Ticket ticket) {
-
+    private String crearDocumento(Ticket ticket) {
+        AtomicReference<String> documentID = new AtomicReference<>("");
         Map<String, Object> datosDocumento = new HashMap<>();
         datosDocumento.put("cantidad_butacas", ticket.getCantidadButacas());
         datosDocumento.put("dimension", ticket.getDimension());
@@ -185,9 +194,13 @@ public class PaymentActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     String idDocumento = documentReference.getId();
                     Log.d("TAG", "Documento creado con ID: " + idDocumento);
+                    documentID.set(idDocumento);
                 })
                 .addOnFailureListener(e -> {
                     Log.e("TAG", "Error al crear el documento", e);
+                    documentID.set("");
                 });
+        return documentID.get();
     }
+
 }
