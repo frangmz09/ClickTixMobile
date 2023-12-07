@@ -78,13 +78,13 @@
                     android:id="@+id/radioButton2D"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2D" />
+                    android:text="@string/d_opt_1" />
 
                 <RadioButton
                     android:id="@+id/radioButton3D"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3D" />
+                    android:text="@string/d_opt_2" />
 
             </RadioGroup>
 
@@ -178,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="12:00"
+                        android:text="@string/time_opt_1"
                         />
 
                     <RadioButton
@@ -186,14 +186,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="14:00" />
+                        android:text="@string/time_opt_2" />
 
                     <RadioButton
                         android:id="@+id/radioButton16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="16:00" />
+                        android:text="@string/time_opt_3" />
 
                     <!-- Fila 2 -->
                     <RadioButton
@@ -201,21 +201,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="18:00" />
+                        android:text="@string/time_opt_4" />
 
                     <RadioButton
                         android:id="@+id/radioButton20"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="20:00" />
+                        android:text="@string/time_opt_5" />
 
                     <RadioButton
                         android:id="@+id/radioButton22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="22:00" />
+                        android:text="@string/time_opt_6" />
 
 
 
@@ -250,25 +250,25 @@
                     android:id="@+id/butaca1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1" />
+                    android:text="@string/seats_opt_1" />
 
                 <RadioButton
                     android:id="@+id/butaca2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2" />
+                    android:text="@string/seats_opt_2" />
 
                 <RadioButton
                     android:id="@+id/butaca3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3" />
+                    android:text="@string/seats_opt_3" />
 
                 <RadioButton
                     android:id="@+id/butaca4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4" />
+                    android:text="@string/seats_opt_4" />
 
             </RadioGroup>
 
@@ -280,7 +280,7 @@
                 android:layout_height="53dp"
                 android:backgroundTint="@color/primary_color"
                 android:layout_marginTop="20dp"
-                android:text="Continuar" />
+                android:text="@string/continue_function_btn" />
 
 
         </LinearLayout>

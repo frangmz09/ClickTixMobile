@@ -72,7 +72,7 @@
                     android:id="@+id/textView6"
                     android:layout_width="327dp"
                     android:layout_height="wrap_content"
-                    android:text="Verificacion de Correo electronico"
+                    android:text="@string/verify_header"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />

@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:text="Verificar correo electronico"
+                android:text="@string/verify_mail_btn"
                 android:textSize="16sp" />
         </LinearLayout>
 

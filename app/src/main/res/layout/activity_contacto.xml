@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="Para cualquier duda o consulta les dejamos nuestros medios de contacto:" />
+            android:text="@string/contact_info" />
 
 
         <TextView
@@ -80,14 +80,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="5dp"
-            android:text="Telefono: 5236-666"
+            android:text="@string/contact_phone"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Direccion: Avenida Corrientes 2037"
+            android:text="@string/contact_adress"
             android:textStyle="bold"
             tools:paddingBottom="5dp" />
 
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:text="Mail: clicktix@contacto.com.ar"
+            android:text="@string/contact_mail"
             android:textStyle="bold" />
 
         <TextView
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="Gracias por utilizar nuestra app!" />
+            android:text="@string/contact_thanks" />
 
     </LinearLayout>
 

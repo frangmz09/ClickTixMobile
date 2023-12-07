@@ -26,37 +26,37 @@
             android:id="@+id/ticket_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Título" />
+            android:text="@string/ticket_list_i_title" />
 
         <TextView
             android:id="@+id/ticket_dimension"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dimension" />
+            android:text="@string/ticket_list_i_dim" />
 
         <TextView
             android:id="@+id/ticket_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha" />
+            android:text="@string/ticket_list_i_date" />
 
         <TextView
             android:id="@+id/ticket_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Horario" />
+            android:text="@string/ticket_list_i_time" />
 
         <TextView
             android:id="@+id/ticket_language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Idioma" />
+            android:text="@string/ticket_list_i_lang" />
 
         <TextView
             android:id="@+id/ticket_seats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Butacas:" />
+            android:text="@string/ticket_list_i_seats" />
 
     </LinearLayout>
 

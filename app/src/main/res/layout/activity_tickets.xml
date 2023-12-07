@@ -87,7 +87,7 @@
                         android:id="@+id/text_no_tickets"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="No se encontró ningun ticket vinculado con tu cuenta..."
+                        android:text="@string/no_tickets_on_user"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textSize="20sp"
@@ -97,7 +97,7 @@
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Te invitamos a"
+                        android:text="@string/navigation_helper"
                         android:textAlignment="center" />
 
                     <Button
@@ -106,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:backgroundTint="@color/primary_color"
-                        android:text="REVISAR NUESTRA CARTELERA"
+                        android:text="@string/btn_from_tickets_to_main"
                         app:iconTint="@color/primary_color" />
                 </LinearLayout>
 

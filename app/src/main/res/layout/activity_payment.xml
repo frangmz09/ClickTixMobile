@@ -114,7 +114,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary_color"
                 android:elevation="3dp"
-                android:text="CONFIRMAR" />
+                android:text="@string/payment_confirm_btn" />
 
 
         </LinearLayout>
