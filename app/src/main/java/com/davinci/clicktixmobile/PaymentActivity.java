@@ -24,7 +24,6 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -84,7 +83,8 @@ public class PaymentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validarCampos()) {
                     realizarPago();
-                    String idTicket = crearDocumento(ticket);
+
+                    crearDocumento(ticket);
 
 
 
@@ -176,8 +176,8 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
         startActivity(intent);
     }
-    private String crearDocumento(Ticket ticket) {
-        AtomicReference<String> documentID = new AtomicReference<>("");
+    private void crearDocumento(Ticket ticket) {
+
         Map<String, Object> datosDocumento = new HashMap<>();
         datosDocumento.put("cantidad_butacas", ticket.getCantidadButacas());
         datosDocumento.put("dimension", ticket.getDimension());
@@ -194,13 +194,11 @@ public class PaymentActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     String idDocumento = documentReference.getId();
                     Log.d("TAG", "Documento creado con ID: " + idDocumento);
-                    documentID.set(idDocumento);
                 })
                 .addOnFailureListener(e -> {
                     Log.e("TAG", "Error al crear el documento", e);
-                    documentID.set("");
                 });
-        return documentID.get();
     }
+
 
 }
