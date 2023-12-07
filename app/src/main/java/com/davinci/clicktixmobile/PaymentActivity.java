@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import android.content.Intent;
@@ -85,8 +87,6 @@ public class PaymentActivity extends AppCompatActivity {
                     realizarPago();
 
                     crearDocumento(ticket);
-
-
 
                     Intent intent = new Intent(PaymentActivity.this, CompraFinalActivity.class);
                     intent.putExtra("TICKET", ticket);
@@ -200,5 +200,23 @@ public class PaymentActivity extends AppCompatActivity {
                 });
     }
 
+    private Bitmap generarCodigoQR(String contenido) {
+        QRCodeWriter writer = new QRCodeWriter();
+        try {
+            BitMatrix bitMatrix = writer.encode(contenido, BarcodeFormat.QR_CODE, 512, 512);
+            int width = bitMatrix.getWidth();
+            int height = bitMatrix.getHeight();
+            Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
 
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    bmp.setPixel(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF);                }
+            }
+
+            return bmp;
+        } catch (WriterException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
