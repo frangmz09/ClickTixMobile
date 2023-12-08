@@ -59,6 +59,10 @@ dependencies {
     implementation ("com.google.guava:guava:30.1-android")
     // Mime4j (mails)
     implementation ("org.apache.james:apache-mime4j-core:0.8.1")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
+    implementation ("org.osmdroid:osmdroid-android:6.1.7")
+    implementation ("org.osmdroid:osmdroid-wms:6.1.7")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
