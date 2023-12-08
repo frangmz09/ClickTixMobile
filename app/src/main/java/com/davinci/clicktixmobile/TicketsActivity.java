@@ -172,15 +172,29 @@ public class TicketsActivity extends AppCompatActivity {
 
                     // Obtener título e imagen de la película
                     String title = jsonObject.get("title").getAsString();
-                    String imageUrl = "https://image.tmdb.org" + "/t/p/w500" + jsonObject.get("poster_path").getAsString();
-                    Log.e("PRUEBA URL", imageUrl);
-                    runOnUiThread(() -> {
-                        TextView titleTextView = ticketView.findViewById(R.id.ticket_title);
-                        ImageView ticketImage = ticketView.findViewById(R.id.ticket_image);
 
-                        titleTextView.setText("Título: " + title);
-                        Picasso.get().load(imageUrl).into(ticketImage);
-                    });
+                    try {
+                        String imageUrl = "https://image.tmdb.org" + "/t/p/w500" + jsonObject.get("poster_path").getAsString();
+
+                        Log.e("PRUEBA URL", imageUrl);
+                        runOnUiThread(() -> {
+                            TextView titleTextView = ticketView.findViewById(R.id.ticket_title);
+                            ImageView ticketImage = ticketView.findViewById(R.id.ticket_image);
+
+                            titleTextView.setText("Título: " + title);
+                            Picasso.get().load(imageUrl).into(ticketImage);
+                        });
+                    }catch (Exception e){;
+                        runOnUiThread(() -> {
+                            TextView titleTextView = ticketView.findViewById(R.id.ticket_title);
+                            ImageView ticketImage = ticketView.findViewById(R.id.ticket_image);
+
+                            titleTextView.setText("Título: " + title);
+                            Picasso.get().load(R.drawable.error_image).into(ticketImage);
+                        });
+                    }
+
+
                 }
             }
         });
