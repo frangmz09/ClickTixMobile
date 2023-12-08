@@ -145,7 +145,20 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         // Obtener detalles específicos de la película
         String titulo = jsonObject.get("title").getAsString();
         String overview = jsonObject.get("overview").getAsString();
-        String imagenUrl = jsonObject.get("poster_path").getAsString();
+        String imagenUrl = null;
+
+        try {
+
+            imagenUrl = jsonObject.get("poster_path").getAsString();
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            imagenUrl = "/null";
+        }
+
+
+
         String releaseDate = jsonObject.get("release_date").getAsString();
         String imagenUrlCompleta = "https://image.tmdb.org/t/p/w500" + imagenUrl;
         mostrarDetallesEnInterfaz(titulo, overview, imagenUrlCompleta, releaseDate);
@@ -164,6 +177,16 @@ public class PeliculaDetalleActivity extends AppCompatActivity {
         overviewTextView.setText(overview);
         releaseDateTextView.setText(String.format("%s%s", getString(R.string.fecha_de_estreno_label), releaseDate));
         subtituloTextView.setText(String.format("%s%s", getString(R.string.titulo_label), titulo.toUpperCase()));
-        Picasso.get().load(imagenUrl).into(imagenImageView);
+
+
+
+        if(imagenUrl.equals("https://image.tmdb.org/t/p/w500/null")){
+            Picasso.get().load(R.drawable.error_image).into(imagenImageView);
+
+        }else{
+            Picasso.get().load(imagenUrl).into(imagenImageView);
+            System.out.println(imagenUrl);
+        }
+
     }
 }
