@@ -282,7 +282,7 @@ public class FuncionesActivity extends AppCompatActivity {
         ticket.setMontoFinal(total);
 
         TextView tv = findViewById(R.id.montoTotalValue);
-        tv.setText(total.toString());
+        tv.setText("$"+total.toString());
         ticket.setMontoFinal(total);
     }
 

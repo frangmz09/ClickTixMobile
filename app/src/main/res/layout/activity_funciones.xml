@@ -78,13 +78,13 @@
                     android:id="@+id/radioButton2D"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/d_opt_1" />
+                    android:text="2D" />
 
                 <RadioButton
                     android:id="@+id/radioButton3D"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/d_opt_2" />
+                    android:text="3D" />
 
             </RadioGroup>
 
@@ -178,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_1"
+                        android:text="12:00"
                         />
 
                     <RadioButton
@@ -186,14 +186,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_2" />
+                        android:text="14:00" />
 
                     <RadioButton
                         android:id="@+id/radioButton16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_3" />
+                        android:text="16:00" />
 
                     <!-- Fila 2 -->
                     <RadioButton
@@ -201,21 +201,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_4" />
+                        android:text="18:00" />
 
                     <RadioButton
                         android:id="@+id/radioButton20"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_5" />
+                        android:text="20:00" />
 
                     <RadioButton
                         android:id="@+id/radioButton22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/time_opt_6" />
+                        android:text="22:00" />
 
 
 
@@ -250,25 +250,25 @@
                     android:id="@+id/butaca1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/seats_opt_1" />
+                    android:text="1" />
 
                 <RadioButton
                     android:id="@+id/butaca2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/seats_opt_2" />
+                    android:text="2" />
 
                 <RadioButton
                     android:id="@+id/butaca3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/seats_opt_3" />
+                    android:text="3" />
 
                 <RadioButton
                     android:id="@+id/butaca4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/seats_opt_4" />
+                    android:text="4" />
 
             </RadioGroup>
 
@@ -284,7 +284,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/monto_total"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:ignore="DuplicateIds,InvalidId" />
@@ -304,7 +304,7 @@
                 android:layout_height="53dp"
                 android:backgroundTint="@color/primary_color"
                 android:layout_marginTop="5dp"
-                android:text="@string/continue_function_btn" />
+                android:text="Continuar" />
 
 
         </LinearLayout>
