@@ -58,6 +58,3 @@ Por el momento, el proyecto está archivado. La idea es proporcionarle más func
 - **Email:** [frangomez0409@gmail.com](mailto:frangomez0409@gmail.com)
 - **LinkedIn:** [![LinkedIn](https://img.shields.io/badge/Franco%20G%C3%B3mez%20Delgado-black?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/francogomezdelgado/)
 
-## Enlace al Demo 🚀
-
-[¡Prueba ClickTix ahora!](link_del_demo)
